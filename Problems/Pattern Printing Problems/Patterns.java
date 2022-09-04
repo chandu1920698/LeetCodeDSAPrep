@@ -7,7 +7,12 @@ Date        : Sep 4, 2022
 
 Modification Log: 
 Date				Name                                            Description
- 
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added printRectangularPattern method
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added increasingTriangle method
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added decreasingTriangle method
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added rightHalfDiamond method
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added leftHalfDiamond method
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added leftHalfDiamondRightHollow method
 */
 public class Patterns {
 	public static void main(String args[]) {
