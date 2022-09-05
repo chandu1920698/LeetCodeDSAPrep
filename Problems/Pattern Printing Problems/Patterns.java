@@ -13,6 +13,10 @@ Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added decreasingTriangle method
 Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added rightHalfDiamond method
 Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added leftHalfDiamond method
 Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added leftHalfDiamondRightHollow method
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added pyramid
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added invertedPyramid
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added diamond
+
 */
 public class Patterns {
 	public static void main(String args[]) {
@@ -25,10 +29,16 @@ public class Patterns {
 		// decreasingTriangle(5);
 		// rightHalfDiamond(5);
 		// rightHalfDiamond(10);
-		leftHalfDiamond(5);
-		leftHalfDiamond(10);
-		leftHalfDiamondRightHollow(5);
-		leftHalfDiamondRightHollow(10);
+		// leftHalfDiamond(5);
+		// leftHalfDiamond(10);
+		// leftHalfDiamondRightHollow(5);
+		// leftHalfDiamondRightHollow(10);
+		// pyramid(5);
+		// invertedPyramid(5);
+		// pyramid(10);
+		// invertedPyramid(10);
+		diamond(5);
+		diamond(10);
 	}
 	
 	public static void printRectangularPattern (int length, int breadth) {
@@ -185,6 +195,138 @@ public class Patterns {
 	----------------------------------------------------------
 	*/
 	
+	public static void pyramid (int N) {
+		System.out.println("----------------------------------------------------------");
+		for(int i=0; i<N; i++){
+			int j;
+			for (j=0; i+j<N; j++) {
+				System.out.print(' ');
+			}
+			for(j=0; j<=i; j++){
+				System.out.print("* ");           // Prints the starts here
+			//System.out.print(j + 1 + " " );  // Prints the numbers here
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+			  *
+			 * *
+			* * *
+		   * * * *
+		  * * * * *
+		 * * * * * *
+		* * * * * * *
+	   * * * * * * * *
+	  * * * * * * * * *
+	 * * * * * * * * * *
+	----------------------------------------------------------
+	*/
+	public static void invertedPyramid (int N) {
+		System.out.println("----------------------------------------------------------");
+		for(int i=0; i<N; i++){
+			int j;
+			for (j=0; j<=i; j++) {
+				System.out.print(' ');
+			}
+			for(j=0; i+j<N; j++){
+				System.out.print("* ");           // Prints the starts here
+			//System.out.print(j + 1 + " " );  	// Prints the numbers here
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+	 * * * * * * * * * *
+	  * * * * * * * * *
+	   * * * * * * * *
+		* * * * * * *
+		 * * * * * *
+		  * * * * *
+		   * * * *
+			* * *
+			 * *
+			  *
+	----------------------------------------------------------
+	*/
+	
+	public static void diamond (int N) {
+		System.out.println("----------------------------------------------------------");
+		for(int i=0; i<N; i++){
+			int j;
+			for (j=0; i+j<N; j++) {
+				System.out.print(' ');
+			}
+			for(j=0; j<=i; j++){
+				//System.out.print("* ");           // Prints the starts here
+				System.out.print(j + 1 + " " );  	// Prints the numbers here
+			}
+			System.out.println();
+		}
+		for(int i=1; i<N; i++){
+			int j;
+			for (j=0; j<=i; j++) {
+				System.out.print(' ');
+			}
+			for(j=0; i+j<N; j++){
+				//System.out.print("* ");           // Prints the starts here
+				System.out.print(j + 1 + " " );  	// Prints the numbers here
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+				  *
+				 * *
+				* * *
+			   * * * *
+			  * * * * *
+			 * * * * * *
+			* * * * * * *
+		   * * * * * * * *
+		  * * * * * * * * *
+		 * * * * * * * * * *
+		  * * * * * * * * *
+		   * * * * * * * *
+			* * * * * * *
+			 * * * * * *
+			  * * * * *
+			   * * * *
+				* * *
+				 * *
+				  *
+	----------------------------------------------------------
+	----------------------------------------------------------
+			  1
+			 1 2
+			1 2 3
+		   1 2 3 4
+		  1 2 3 4 5
+		 1 2 3 4 5 6
+		1 2 3 4 5 6 7
+	   1 2 3 4 5 6 7 8
+	  1 2 3 4 5 6 7 8 9
+	 1 2 3 4 5 6 7 8 9 10
+	  1 2 3 4 5 6 7 8 9
+	   1 2 3 4 5 6 7 8
+		1 2 3 4 5 6 7
+		 1 2 3 4 5 6
+		  1 2 3 4 5
+		   1 2 3 4
+			1 2 3
+			 1 2
+			  1
+	----------------------------------------------------------
+	*/
 }
 
 /*class rectangularPattern {
