@@ -3,30 +3,56 @@ Class Name  : Patterns
 Description : This class is used to print multiple patterns. Individual methods/classes are written to print the patterns.
 Author      : Chandra Sekhar Reddy Muthumula
 Date        : Sep 4, 2022
-
+Website Link: https://www.faceprep.in/c/pattern-programs-in-c/
 
 Modification Log: 
 Date				Name                                            Description
-Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added printRectangularPattern method
-Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added increasingTriangle method
-Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added decreasingTriangle method
-Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added rightHalfDiamond method
-Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added leftHalfDiamond method
-Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added leftHalfDiamondRightHollow method
-Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added pyramid
-Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added invertedPyramid
-Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added diamond
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added solidRectangle method
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added hollowRectangle method
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added halfPyramid method
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added invertedHalfPyramid method
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added hollowInvertedHalfPyramid method
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added fullPyramid method
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added invertedFullPyramid
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added hollowFullPyramid
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added halfPyramidNumbers
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added invertedHalfPyramidNumbers
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added hollowHalfPyramidNumbers
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added fullPyramidNumbers
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added
+Sep 4, 2022			Chandra Sekhar Reddy Muthumula					Added
 
 */
 public class Patterns {
 	public static void main(String args[]) {
-		System.out.println("Hi");
-		// printRectangularPattern(5, 10);
-		// printRectangularPattern(1,2);
-		// increasingTriangle(5);
-		// increasingTriangle(10);
-		// decreasingTriangle(10);
-		// decreasingTriangle(5);
+		// solidRectangle(50, 10);
+		// solidRectangle(1, 2);
+		// hollowRectangle(50, 10);
+		// hollowRectangle(10, 5);
+		// halfPyramid(5);
+		// halfPyramid(10);
+		// invertedHalfPyramid(10);
+		// invertedHalfPyramid(5);
+		// hollowInvertedHalfPyramid(10);
+		// hollowInvertedHalfPyramid(5);
+		// fullPyramid(10);
+		// fullPyramid(5);
+		// invertedFullPyramid(10);
+		// invertedFullPyramid(5);
+		// hollowFullPyramid(5);
+		// hollowFullPyramid(10);
+		// halfPyramidNumbers(10);
+		// halfPyramidNumbers(5);
+		// invertedHalfPyramidNumbers(5);
+		// invertedHalfPyramidNumbers(10);
+		// hollowHalfPyramidNumbers(5);
+		// hollowHalfPyramidNumbers(10);
+		fullPyramidNumbers(5);
+		fullPyramidNumbers(10);
 		// rightHalfDiamond(5);
 		// rightHalfDiamond(10);
 		// leftHalfDiamond(5);
@@ -37,11 +63,11 @@ public class Patterns {
 		// invertedPyramid(5);
 		// pyramid(10);
 		// invertedPyramid(10);
-		diamond(5);
-		diamond(10);
+		// diamond(5);
+		// diamond(10);
 	}
 	
-	public static void printRectangularPattern (int length, int breadth) {
+	public static void solidRectangle (int length, int breadth) {
 		System.out.println("----------------------------------------------------------");
 		for(int i=0; i<breadth; i++) {
 			for (int j=0; j<length; j++) {
@@ -49,36 +75,325 @@ public class Patterns {
 			}
 			System.out.println();
 		}
+		System.out.println("----------------------------------------------------------");
 	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+	**************************************************
+	**************************************************
+	**************************************************
+	**************************************************
+	**************************************************
+	**************************************************
+	**************************************************
+	**************************************************
+	**************************************************
+	**************************************************
+	----------------------------------------------------------
+	*/
 	
-	public static void increasingTriangle (int N) {
+	public static void hollowRectangle (int length, int breadth) {
+		System.out.println("----------------------------------------------------------");
+		for(int i=0; i<breadth; i++) {
+			for (int j=0; j<length; j++) {
+				if((i == 0) || (i == breadth - 1) || (i != 0 && (j == 0 || j == length - 1))) {
+					System.out.print('*');
+				} else {
+					System.out.print(' ');
+				}
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+	**************************************************
+	*                                                *
+	*                                                *
+	*                                                *
+	*                                                *
+	*                                                *
+	*                                                *
+	*                                                *
+	*                                                *
+	**************************************************
+	----------------------------------------------------------
+	*/
+	
+	public static void halfPyramid (int N) {
 		System.out.println("----------------------------------------------------------");
 		for(int i=0; i<N; i++){
 			for(int j=0; j<=i; j++){
-			//System.out.print('*');           // Prints the starts here
-			System.out.print(j + 1 + " " );  // Prints the numbers here
+			System.out.print('*');           // Prints the starts here
+			//System.out.print(j + 1 + " " );  // Prints the numbers here
 			}
 			System.out.println();
 		}
+		System.out.println("----------------------------------------------------------");
 	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+	*
+	**
+	***
+	****
+	*****
+	----------------------------------------------------------
+	*/
 	
-	public static void decreasingTriangle (int N) {
+	public static void invertedHalfPyramid (int N) {
 		System.out.println("----------------------------------------------------------");
 		for(int i=0; i<N; i++){
 			for(int j=0; i+j < N; j++){
-			//System.out.print('*');         // Prints the starts here
+			System.out.print('*');         // Prints the starts here
+			//System.out.print(j + 1 + " " );  // Prints the numbers here
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+	**********
+	*********
+	********
+	*******
+	******
+	*****
+	****
+	***
+	**
+	*
+	----------------------------------------------------------
+	*/
+	
+	public static void hollowInvertedHalfPyramid (int N) {
+		System.out.println("----------------------------------------------------------");
+		for(int i=0; i<N; i++){
+			for(int j=0; i+j < N; j++){
+				if ( (i == 0) || (i == N -1) || (j == 0 || j == N - i - 1) ) {
+					System.out.print('*');         // Prints the starts here
+					//System.out.print(j + 1 + " " );  // Prints the numbers here
+				} else {
+					System.out.print(' ');         
+				}
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+	**********
+	*       *
+	*      *
+	*     *
+	*    *
+	*   *
+	*  *
+	* *
+	**
+	*
+	----------------------------------------------------------
+	*/
+	
+	public static void fullPyramid (int N) {
+		System.out.println("----------------------------------------------------------");
+		for(int i=0; i<N; i++){
+			int j;
+			for (j=0; i+j<N; j++) {
+				System.out.print(' ');
+			}
+			for(j=0; j<=i; j++){
+				System.out.print("* ");           // Prints the starts here
+			//System.out.print(j + 1 + " " );  // Prints the numbers here
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+			  *
+			 * *
+			* * *
+		   * * * *
+		  * * * * *
+		 * * * * * *
+		* * * * * * *
+	   * * * * * * * *
+	  * * * * * * * * *
+	 * * * * * * * * * *
+	----------------------------------------------------------
+	*/
+	
+	public static void invertedFullPyramid (int N) {
+		System.out.println("----------------------------------------------------------");
+		for(int i=0; i<N; i++){
+			int j;
+			for (j=0; j<=i; j++) {
+				System.out.print(' ');
+			}
+			for(j=0; i+j<N; j++){
+				System.out.print("* ");           // Prints the starts here
+			//System.out.print(j + 1 + " " );  	// Prints the numbers here
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+	 * * * * * * * * * *
+	  * * * * * * * * *
+	   * * * * * * * *
+		* * * * * * *
+		 * * * * * *
+		  * * * * *
+		   * * * *
+			* * *
+			 * *
+			  *
+	----------------------------------------------------------
+	*/
+	
+	public static void hollowFullPyramid (int N) {
+		System.out.println("----------------------------------------------------------");
+		for(int i=0; i<N; i++){
+			int j;
+			for (j=0; i+j<N; j++) {
+				System.out.print(' ');
+			}
+			for(j=0; j<= 2 * i; j++){
+				if ( (i == 0) || (i == N -1 ) || (j == 0 || (j  == 2 * i) ) ) {
+					System.out.print("*");           // Prints the starts here
+					//System.out.print(j + 1 + " " );  // Prints the numbers here
+				} else {
+					System.out.print(' ');      
+				}
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+			  *
+			 * *
+			*   *
+		   *     *
+		  *       *
+		 *         *
+		*           *
+	   *             *
+	  *               *
+	 *******************
+	----------------------------------------------------------
+	*/
+	
+	public static void halfPyramidNumbers (int N) {
+		System.out.println("----------------------------------------------------------");
+		for(int i=0; i<N; i++){
+			for(int j=0; j<=i; j++){
 			System.out.print(j + 1 + " " );  // Prints the numbers here
 			}
 			System.out.println();
 		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+	1
+	1 2
+	1 2 3
+	1 2 3 4
+	1 2 3 4 5
+	----------------------------------------------------------
+	*/
+	
+	public static void invertedHalfPyramidNumbers (int N) {
+		System.out.println("----------------------------------------------------------");
+		for(int i=0; i<N; i++){
+			for(int j=0; i+j < N; j++){
+			System.out.print(j + 1 + " " );  // Prints the numbers here
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+	1 2 3 4 5
+	1 2 3 4
+	1 2 3
+	1 2
+	1
+	----------------------------------------------------------
+	*/
+	
+	public static void hollowHalfPyramidNumbers (int N) {
+		System.out.println("----------------------------------------------------------");
+		for(int i=0; i<N; i++){
+			for(int j=0; j<=i; j++){
+				if ( (i == 0) || ( i == N -1 ) || (j == 0 || j == i) ) {
+					System.out.print(j + 1 + " " );  // Prints the numbers here
+				} else {
+					System.out.print("  ");  
+				}
+				
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+	1
+	1 2
+	1   3
+	1     4
+	1       5
+	1         6
+	1           7
+	1             8
+	1               9
+	1 2 3 4 5 6 7 8 9 10
+	----------------------------------------------------------
+	*/
+	
+	public static void fullPyramidNumbers (int N) {
+		System.out.println("----------------------------------------------------------");
+		for(int i=0; i<N; i++){
+			int j;
+			for (j=0; i+j<N; j++) {
+				System.out.print(' ');
+			}
+			for(j=0; j<=i; j++){
+				System.out.print(j + 1 + " " );  // Prints the numbers here
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
 	}
 	
 	public static void rightHalfDiamond (int N) {
 		System.out.println("----------------------------------------------------------");
 		for(int i=0; i<N; i++){
 			for(int j=0; j<=i; j++){
-			//System.out.print('*');           // Prints the starts here
-			System.out.print(j + 1 + " " );  // Prints the numbers here
+			System.out.print('*');           // Prints the starts here
+			//System.out.print(j + 1 + " " );  // Prints the numbers here
 			}
 			System.out.println();
 		}
@@ -195,66 +510,8 @@ public class Patterns {
 	----------------------------------------------------------
 	*/
 	
-	public static void pyramid (int N) {
-		System.out.println("----------------------------------------------------------");
-		for(int i=0; i<N; i++){
-			int j;
-			for (j=0; i+j<N; j++) {
-				System.out.print(' ');
-			}
-			for(j=0; j<=i; j++){
-				System.out.print("* ");           // Prints the starts here
-			//System.out.print(j + 1 + " " );  // Prints the numbers here
-			}
-			System.out.println();
-		}
-		System.out.println("----------------------------------------------------------");
-	}
-	/*
-	OUTPUT:
-	----------------------------------------------------------
-			  *
-			 * *
-			* * *
-		   * * * *
-		  * * * * *
-		 * * * * * *
-		* * * * * * *
-	   * * * * * * * *
-	  * * * * * * * * *
-	 * * * * * * * * * *
-	----------------------------------------------------------
-	*/
-	public static void invertedPyramid (int N) {
-		System.out.println("----------------------------------------------------------");
-		for(int i=0; i<N; i++){
-			int j;
-			for (j=0; j<=i; j++) {
-				System.out.print(' ');
-			}
-			for(j=0; i+j<N; j++){
-				System.out.print("* ");           // Prints the starts here
-			//System.out.print(j + 1 + " " );  	// Prints the numbers here
-			}
-			System.out.println();
-		}
-		System.out.println("----------------------------------------------------------");
-	}
-	/*
-	OUTPUT:
-	----------------------------------------------------------
-	 * * * * * * * * * *
-	  * * * * * * * * *
-	   * * * * * * * *
-		* * * * * * *
-		 * * * * * *
-		  * * * * *
-		   * * * *
-			* * *
-			 * *
-			  *
-	----------------------------------------------------------
-	*/
+	
+	
 	
 	public static void diamond (int N) {
 		System.out.println("----------------------------------------------------------");
