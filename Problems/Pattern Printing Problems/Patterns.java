@@ -27,71 +27,51 @@ Sep 6, 2022			Chandra Sekhar Reddy Muthumula					Added pyramidPalindromeNumbers
 Sep 6, 2022			Chandra Sekhar Reddy Muthumula					Added pyramidNumbersWithStars
 Sep 6, 2022			Chandra Sekhar Reddy Muthumula					Added solidDiamond
 Sep 6, 2022			Chandra Sekhar Reddy Muthumula					Added hollowDiamond
-Sep 7, 2022			Chandra Sekhar Reddy Muthumula					Added solidHalfDiamond
-Sep 7, 2022			Chandra Sekhar Reddy Muthumula					Added solidLeftHalfDiamond
-Sep 7, 2022			Chandra Sekhar Reddy Muthumula					Added
-Sep 7, 2022			Chandra Sekhar Reddy Muthumula					Added
-Sep 7, 2022			Chandra Sekhar Reddy Muthumula					Added
-
+Sep 6, 2022			Chandra Sekhar Reddy Muthumula					Added solidHalfDiamond
+Sep 6, 2022			Chandra Sekhar Reddy Muthumula					Added solidLeftHalfDiamond
+Sep 7, 2022			Chandra Sekhar Reddy Muthumula					Added floydsTraingle
+Sep 7, 2022			Chandra Sekhar Reddy Muthumula					Added hollowDiamondInscribedInRectangle
+Sep 7, 2022			Chandra Sekhar Reddy Muthumula					Added pascalTriangle
+Sep 7, 2022			Chandra Sekhar Reddy Muthumula					Added butterflyPrintingPattern
+Sep 7, 2022			Chandra Sekhar Reddy Muthumula					Added diagonalAndSidesOfSquare
+Sep 7, 2022			Chandra Sekhar Reddy Muthumula					Added diagonalAndSidesOfParalellogram
+Sep 7, 2022			Chandra Sekhar Reddy Muthumula					Added diagonalAndSidesOfRhombus
+Sep 7, 2022			Chandra Sekhar Reddy Muthumula					Added leftArrowRightArrow
+Sep 7, 2022			Chandra Sekhar Reddy Muthumula					Added solidThickDiamondHollow
 */
 public class Patterns {
 	public static void main(String args[]) {
-		// solidRectangle(50, 10);
-		// solidRectangle(1, 2);
-		// hollowRectangle(50, 10);
-		// hollowRectangle(10, 5);
-		// halfPyramid(5);
-		// halfPyramid(10);
-		// invertedHalfPyramid(10);
-		// invertedHalfPyramid(5);
-		// hollowInvertedHalfPyramid(10);
-		// hollowInvertedHalfPyramid(5);
-		// fullPyramid(10);
-		// fullPyramid(5);
-		// invertedFullPyramid(10);
-		// invertedFullPyramid(5);
-		// hollowFullPyramid(5);
-		// hollowFullPyramid(10);
-		// halfPyramidNumbers(10);
-		// halfPyramidNumbers(5);
-		// invertedHalfPyramidNumbers(5);
-		// invertedHalfPyramidNumbers(10);
-		// hollowHalfPyramidNumbers(5);
-		// hollowHalfPyramidNumbers(10);
-		// fullPyramidNumbers(5);
-		// fullPyramidNumbers(10);
-		// hollowFullPyramidNumbers(5);
-		// hollowFullPyramidNumbers(10);
-		// hollowInvertedHalfPyramidNumbers(5);
-		// hollowInvertedHalfPyramidNumbers(10);
-		// palindromeNumber(5);
-		// palindromeNumber(10);
-		// palindromeAlphabets(5);
-		// palindromeAlphabets(10);
-		// pyramidPalindromeNumbers(5);
-		// pyramidPalindromeNumbers(10);
-		// pyramidNumbersWithStars(5);
-		// pyramidNumbersWithStars(10);
-		// solidDiamond(5);
-		// solidDiamond(10);
-		// hollowDiamond(5);
-		// hollowDiamond(10);
-		// solidHalfDiamond(5);
-		// solidHalfDiamond(10);
-		solidLeftHalfDiamond(5);
-		solidLeftHalfDiamond(10);
-		// rightHalfDiamond(5);
-		// rightHalfDiamond(10);
-		// leftHalfDiamond(5);
-		// leftHalfDiamond(10);
-		// leftHalfDiamondRightHollow(5);
-		// leftHalfDiamondRightHollow(10);
-		// pyramid(5);
-		// invertedPyramid(5);
-		// pyramid(10);
-		// invertedPyramid(10);
-		// diamond(5);
-		// diamond(10);
+		// solidRectangle(50, 10); solidRectangle(1, 2);
+		// hollowRectangle(50, 10); hollowRectangle(10, 5);
+		// halfPyramid(5); halfPyramid(10);
+		// invertedHalfPyramid(10); invertedHalfPyramid(5);
+		// hollowInvertedHalfPyramid(10);  hollowInvertedHalfPyramid(5);
+		// fullPyramid(10); fullPyramid(5);
+		// invertedFullPyramid(10); invertedFullPyramid(5);
+		// hollowFullPyramid(5); hollowFullPyramid(10);
+		// halfPyramidNumbers(10); halfPyramidNumbers(5);
+		// invertedHalfPyramidNumbers(5); invertedHalfPyramidNumbers(10);
+		// hollowHalfPyramidNumbers(5); hollowHalfPyramidNumbers(10);
+		// fullPyramidNumbers(5); fullPyramidNumbers(10);
+		// hollowFullPyramidNumbers(5); hollowFullPyramidNumbers(10);
+		// hollowInvertedHalfPyramidNumbers(5); hollowInvertedHalfPyramidNumbers(10);
+		// palindromeNumber(5); palindromeNumber(10);
+		// palindromeAlphabets(5); palindromeAlphabets(10);
+		// pyramidPalindromeNumbers(5); pyramidPalindromeNumbers(10);
+		// pyramidNumbersWithStars(5); pyramidNumbersWithStars(10);
+		// solidDiamond(5); solidDiamond(10);
+		// hollowDiamond(5); hollowDiamond(10);
+		// solidHalfDiamond(5); solidHalfDiamond(10);
+		// solidLeftHalfDiamond(5); solidLeftHalfDiamond(10);
+		// floydsTraingle(5); floydsTraingle(10);
+		// hollowDiamondInscribedInRectangle(5); hollowDiamondInscribedInRectangle(10);
+		// pascalTriangle(5); pascalTriangle(10);
+		// butterflyPrintingPattern(5);butterflyPrintingPattern(15);
+		// diagonalAndSidesOfSquare(10);diagonalAndSidesOfSquare(25);
+		// diagonalAndSidesOfParalellogram(10);diagonalAndSidesOfParalellogram(25);
+		// diagonalAndSidesOfRhombus(10);diagonalAndSidesOfRhombus(25);
+		// leftArrowRightArrow(10);leftArrowRightArrow(11); 
+		solidThickDiamondHollow(5);solidThickDiamondHollow(10);
 	}
 	
 	public static void solidRectangle (int length, int breadth) {
@@ -761,15 +741,304 @@ public class Patterns {
 	----------------------------------------------------------
 	*/
 	
-	public static void leftHalfDiamondRightHollow (int N) {
+	public static void floydsTraingle (int N) {
+		System.out.println("----------------------------------------------------------");
+		int count = 0;
+		for (int i=0; i<N; i++) {
+			for (int j=0; j<=i; j++) {
+				System.out.print(++count + " ");
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+	1
+	2 3
+	4 5 6
+	7 8 9 10
+	11 12 13 14 15
+	----------------------------------------------------------
+	*/
+	
+	public static void hollowDiamondInscribedInRectangle (int N) {
 		System.out.println("----------------------------------------------------------");
 		for(int i=0; i<N; i++){
 			int j;
-			for(j=0; i+j<N-1; j++){
+			for (j=0; i+j<N; j++) {
+				System.out.print('*');
+			}
+			for(j=0; j<=i; j++){
+				System.out.print("  ");           // Prints the starts here
+				//System.out.print(j + 1 + " " );  	// Prints the numbers here
+			}
+			for(j=0; i+j<N; j++){
+				System.out.print("*");           // Prints the starts here
+				//System.out.print(j + 1 + " " );  	// Prints the numbers here
+			}
+			System.out.println();
+		}
+		for(int i=1; i<N; i++){
+			int j;
+			for (j=0; j<=i; j++) {
+				System.out.print('*');
+			}
+			for(j=0; i+j<N; j++){
+				System.out.print("  ");           // Prints the starts here
+				//System.out.print(j + 1 + " " );  	// Prints the numbers here
+			}
+			
+			for (j=0; j<=i; j++) {
+				System.out.print('*');
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+	*****  *****
+	****    ****
+	***      ***
+	**        **
+	*          *
+	**        **
+	***      ***
+	****    ****
+	*****  *****
+	----------------------------------------------------------
+	*/
+	
+	public static void pascalTriangle (int N) {
+		System.out.println("----------------------------------------------------------");
+		for (int i=0; i<N; i++) {
+			for (int j=0; i+j<N; j++) {
+				System.out.print(" ");
+			}
+			int temp = 1;
+			for (int k=0; k<=i; k++) {
+				System.out.print(temp + " ");
+				temp = temp*(i-k)/(k+1);
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+			  1
+			 1 1
+			1 2 1
+		   1 3 3 1
+		  1 4 6 4 1
+		 1 5 10 10 5 1
+		1 6 15 20 15 6 1
+	   1 7 21 35 35 21 7 1
+	  1 8 28 56 70 56 28 8 1
+	 1 9 36 84 126 126 84 36 9 1
+	----------------------------------------------------------
+	*/
+	
+	public static void butterflyPrintingPattern (int N) {
+		System.out.println("----------------------------------------------------------");
+		for(int i=0; i<N; i++){
+			int j;
+			for(j=0; j<=i; j++){
+				System.out.print("*");           // Prints the starts here
+			}
+			for (j=0; i+j<N-1; j++) {
+				System.out.print(' ');
+			}
+			for (j=0; i+j<N; j++) {
+				System.out.print(' ');
+			}
+			for(j=0; j<=i; j++){
+				System.out.print("*");           // Prints the starts here
+			}
+			System.out.println();
+		}
+		for(int i=1; i<N; i++){
+			int j;
+			for(j=0; i+j<N; j++){
+				System.out.print("*");           // Prints the starts here
+			}
+			for (j=0; j<=2*i; j++) {
+				System.out.print(' ');
+			}
+			for(j=0; i+j<N; j++){
+				System.out.print("*");           // Prints the starts here
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+	*         *
+	**       **
+	***     ***
+	****   ****
+	***** *****
+	****   ****
+	***     ***
+	**       **
+	*         *
+	----------------------------------------------------------
+	*/
+	
+	public static void diagonalAndSidesOfSquare (int N) {
+		System.out.println("----------------------------------------------------------");
+		for (int i=0; i<N; i++) {
+			for (int j=0; j<N; j++) {
+				if(i==j || i==0 || j==0 || i==N-1 || j==N-1 || i+j==N-1) {
+					System.out.print('*');
+				} else {
+					System.out.print(' ');
+				}
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+	**********
+	**      **
+	* *    * *
+	*  *  *  *
+	*   **   *
+	*   **   *
+	*  *  *  *
+	* *    * *
+	**      **
+	**********
+	----------------------------------------------------------
+	*/
+	
+	public static void diagonalAndSidesOfParalellogram (int N) {
+		System.out.println("----------------------------------------------------------");
+		for (int i=0; i<N; i++) {
+			for (int j=0; i+j<N; j++) {
+				System.out.print(' ');
+			}
+			for (int j=0; j<N; j++) {
+				if(i==j || i==0 || j==0 || i==N-1 || j==N-1 || i+j==N-1) {
+					System.out.print('*');
+				} else {
+					System.out.print(' ');
+				}
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+			  **********
+			 **      **
+			* *    * *
+		   *  *  *  *
+		  *   **   *
+		 *   **   *
+		*  *  *  *
+	   * *    * *
+	  **      **
+	 **********
+	----------------------------------------------------------
+	*/
+	
+	public static void diagonalAndSidesOfRhombus (int N) {
+		System.out.println("----------------------------------------------------------");
+		for (int i=0; i<N; i++) {
+			for (int j=0; j<N; j++) {
+				if(i==(N-1)/2 || j==(N-1)/2 || i+j==(N-1)/2 || (i-j)==((N-1)/2) || (j-i)==((N-1)/2) ||  i+j==(N/2)*3) {
+					System.out.print('*');
+				} else {
+					System.out.print(' ');
+				}
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+		 *
+		***
+	   * * *
+	  *  *  *
+	 *   *   *
+	***********
+	 *   *   *
+	  *  *  *
+	   * * *
+		***
+		 *
+	----------------------------------------------------------
+	*/
+	
+	public static void leftArrowRightArrow (int N) {
+		System.out.println("----------------------------------------------------------");
+		for (int i=0; i<N; i++) {
+			for (int j=0; j<N; j++) {
+				if(i==(N-1)/2 || (j-i)==((N-1)/2) ||  i+j==(N/2)*3) {
+					System.out.print('*');
+				} else {
+					System.out.print(' ');
+				}
+			}
+			System.out.print("   ");
+			for (int j=0; j<N; j++) {
+				if(i==(N-1)/2 || i+j==(N-1)/2 || (i-j)==((N-1)/2)) {
+					System.out.print('*');
+				} else {
+					System.out.print(' ');
+				}
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+	/*
+	OUTPUT:
+	----------------------------------------------------------
+		 *             *
+		  *           *
+		   *         *
+			*       *
+			 *     *
+	***********   ***********
+			 *     *
+			*       *
+		   *         *
+		  *           *
+		 *             *
+	----------------------------------------------------------
+	*/
+	
+	public static void solidThickDiamondHollow (int N) {
+		System.out.println("----------------------------------------------------------");
+		for(int i=0; i<N; i++){
+			int j;
+			for(j=0; i+j<N; j++){
 				System.out.print("    ");
 			}
-			for(int k=N-j; k>0; k--) {
-				System.out.print(k + " ");
+			for(j=0; j<=i; j++) {
+				System.out.print("* ");
+			}
+			for(j=0; j<=i; j++){
+				System.out.print("    ");
+			}
+			for(j=0; j<=i; j++) {
+				System.out.print("* ");
 			}
 			System.out.println();
 		}
@@ -779,50 +1048,45 @@ public class Patterns {
 			for(j=0; j<=i; j++){
 				System.out.print("    ");
 			}
-			for(int k=N-j; k>0; k--) {
-				System.out.print(k + " ");
+			for(j=0; i+j<N; j++) {
+				System.out.print("* ");
+			}
+			for(j=0; i+j<N; j++){
+				System.out.print("    ");
+			}
+			for(j=0; i+j<N; j++) {
+				System.out.print("* ");
 			}
 			System.out.println();
 		}
 		System.out.println("----------------------------------------------------------");
 	}
 	/*
-		Output:
-		
+	OUTPUT:
 	----------------------------------------------------------
-										1
-									2 1
-								3 2 1
-							4 3 2 1
-						5 4 3 2 1
-					6 5 4 3 2 1
-				7 6 5 4 3 2 1
-			8 7 6 5 4 3 2 1
-		9 8 7 6 5 4 3 2 1
-	10 9 8 7 6 5 4 3 2 1
-		9 8 7 6 5 4 3 2 1
-			8 7 6 5 4 3 2 1
-				7 6 5 4 3 2 1
-					6 5 4 3 2 1
-						5 4 3 2 1
-							4 3 2 1
-								3 2 1
-									2 1
-										1
-
+											*     *
+										* *         * *
+									* * *             * * *
+								* * * *                 * * * *
+							* * * * *                     * * * * *
+						* * * * * *                         * * * * * *
+					* * * * * * *                             * * * * * * *
+				* * * * * * * *                                 * * * * * * * *
+			* * * * * * * * *                                     * * * * * * * * *
+		* * * * * * * * * *                                         * * * * * * * * * *
+		* * * * * * * * * *                                         * * * * * * * * * *
+			* * * * * * * * *                                     * * * * * * * * *
+				* * * * * * * *                                 * * * * * * * *
+					* * * * * * *                             * * * * * * *
+						* * * * * *                         * * * * * *
+							* * * * *                     * * * * *
+								* * * *                 * * * *
+									* * *             * * *
+										* *         * *
+											*     *
 	----------------------------------------------------------
 	*/
 }
 
-/*class rectangularPattern {
-	protected void printRectangularPattern (int length, int breadth) {
-		for(int i=0; i<breadth; i++) {
-			for (int j=0; j<length; j++) {
-				System.out.print('*');
-			}
-			System.out.println();
-		}
-	}
-}*/
 
 
