@@ -65,13 +65,13 @@ public class Patterns {
 		// solidLeftHalfDiamond(5); solidLeftHalfDiamond(10);
 		// floydsTraingle(5); floydsTraingle(10);
 		// hollowDiamondInscribedInRectangle(5); hollowDiamondInscribedInRectangle(10);
-		// pascalTriangle(5); pascalTriangle(10);
+		pascalTriangle(5); pascalTriangle(10);
 		// butterflyPrintingPattern(5);butterflyPrintingPattern(15);
 		// diagonalAndSidesOfSquare(10);diagonalAndSidesOfSquare(25);
 		// diagonalAndSidesOfParalellogram(10);diagonalAndSidesOfParalellogram(25);
 		// diagonalAndSidesOfRhombus(10);diagonalAndSidesOfRhombus(25);
 		// leftArrowRightArrow(10);leftArrowRightArrow(11); 
-		solidThickDiamondHollow(5);solidThickDiamondHollow(10);
+		// solidThickDiamondHollow(5);solidThickDiamondHollow(10);
 	}
 	
 	public static void solidRectangle (int length, int breadth) {
@@ -821,7 +821,7 @@ public class Patterns {
 			int temp = 1;
 			for (int k=0; k<=i; k++) {
 				System.out.print(temp + " ");
-				temp = temp*(i-k)/(k+1);
+				temp = (temp * (i-k))/(k+1);
 			}
 			System.out.println();
 		}
