@@ -2,6 +2,7 @@
 Class Name  : FirstTwoMaximumElementsInArray
 Description : This class is used to find the First two maximum elemets of the given array of integers.
 Date        : Sep 11, 2022
+Author      : Chandra Sekhar Reddy Muthumula
 Website Link: NA
 
 Modification Log: 
@@ -47,8 +48,7 @@ public class FirstTwoMaximumElementsInArray {
 			// if (max_1 < val) {
 				// max_2 = max_1;
 				// max_1 = val;
-			// }
-			// if (max_2 < val) {
+			// } else if (max_2 < val) {
 				// max_2 = val;
 			// }
 		// }
