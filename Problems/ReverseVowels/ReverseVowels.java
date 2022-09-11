@@ -1,3 +1,15 @@
+/*
+Class Name  : ReverseVowels
+Description : This class is used to reverse the vowels in the string.
+Author      : Chandra Sekhar Reddy Muthumula
+Date        : Sep 11, 2022
+Website Link: https://www.faceprep.in/c/pattern-programs-in-c/
+
+Modification Log: 
+Date					Name                                            Description
+Sep 11, 2022			Chandra Sekhar Reddy Muthumula					Added reverseVowels 
+Sep 11, 2022			Chandra Sekhar Reddy Muthumula					Added isVowel 
+*/
 class ReverseVowels {
 	public static void main (String[] args) {
 		System.out.println("Original String : 'abcde' -> After  reversing vowels : '" + reverseVowels("abcde") + "'");
