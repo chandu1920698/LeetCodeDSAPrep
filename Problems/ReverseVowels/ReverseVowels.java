@@ -47,3 +47,18 @@ class ReverseVowels {
         return false;
     }
 }
+
+/*
+OUTPUT:
+
+Original String : 'abcde' -> After  reversing vowels : 'ebcda'
+Original String : 'qwerty' -> After  reversing vowels : 'qwerty'
+Original String : 'ace' -> After  reversing vowels : 'eca'
+Original String : 'qazxswedc' -> After  reversing vowels : 'qezxswadc'
+Original String : 'aeiou' -> After  reversing vowels : 'uoiea'
+Original String : 'aaeeiioouu' -> After  reversing vowels : 'uuooiieeaa'
+Original String : 'qwrtyp' -> After  reversing vowels : 'qwrtyp'
+Original String : 'AEIOUaeiou' -> After  reversing vowels : 'uoieaUOIEA'
+Original String : 'a' -> After  reversing vowels : 'a'
+
+*/
