@@ -7,8 +7,9 @@ Website Link: https://leetcode.com/problems/running-sum-of-1d-array/
 
 Modification Log: 
 Date					Name                                            Description
-Sep 11, 2022			Chandra Sekhar Reddy Muthumula					Added arraySum 
-Sep 11, 2022			Chandra Sekhar Reddy Muthumula					Added printElementOfIndex 
+Sep 11, 2022			Chandra Sekhar Reddy Muthumula					Added Class RunningSumOf1dArray 
+Sep 11, 2022			Chandra Sekhar Reddy Muthumula					Added runningSum 
+Sep 13, 2022			Chandra Sekhar Reddy Muthumula					Added findMaxMinOfArray
 --------------------------------------------------------------------------------------------------
 
 QUESTION : Running Sum of 1d Array
