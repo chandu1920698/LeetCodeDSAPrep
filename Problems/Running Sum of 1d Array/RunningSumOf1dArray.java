@@ -52,8 +52,6 @@ class RunningSumOf1dArray {
 			-> Approach 1	
 			TC 			: O(N^2)
 			SC 			: O(1)
-			Runtime		: 1 ms, faster than 23.30% of Java online submissions for Running Sum of 1d Array.
-			Memory Usage: 42.8 MB, less than 82.01% of Java online submissions for Running Sum of 1d Array.
 			Recommended : NO
 			*/
 			
@@ -72,8 +70,6 @@ class RunningSumOf1dArray {
 			-> Approach 2	
 			TC 			: O(N)
 			SC 			: O(1)
-			Runtime		: 4 ms, faster than 6.06% of Java online submissions for Running Sum of 1d Array.
-			Memory Usage: 43 MB, less than 77.02% of Java online submissions for Running Sum of 1d Array.
 			Recommended : Yes
 			*/
             int tempSum = 0;
