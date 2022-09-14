@@ -55,9 +55,7 @@ class RichestCustomerWealth {
 		/*
 		TC 			: O(N^2)
 		SC 			: O(1)
-		Runtime		: 1 ms, faster than 57.55% of Java online submissions for Richest Customer Wealth.
-		Memory Usage: 43.4 MB, less than 46.73% of Java online submissions for Richest Customer Wealth.
-		Recommended : No Idea - Trying for better approach
+		Recommended : YES - No better approach to traverse the 2D Array
 		*/
         int maxWealth = Integer.MIN_VALUE;
         int m = accounts.length;
