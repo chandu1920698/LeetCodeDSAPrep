@@ -6,8 +6,8 @@ Author      : Chandra Sekhar Reddy Muthumula
 Website Link: https://www.youtube.com/watch?v=E7thKCWmP98&list=PLfQN-EvRGF39Vz4UO18BtA1ocnUhGkvk5&index=14&ab_channel=CodesYourMind
 Modification Log: 
 Date					Name                                            Description
-Sep 14, 2022			Chandra Sekhar Reddy Muthumula					Added Class FindTheMissingNumberUsingBitManipultion 
-Sep 14, 2022			Chandra Sekhar Reddy Muthumula					Added findTheMissingNumberUsingBitManipultion 
+Sep 16, 2022			Chandra Sekhar Reddy Muthumula					Added Class FindTheMissingNumberUsingBitManipultion 
+Sep 16, 2022			Chandra Sekhar Reddy Muthumula					Added findTheMissingNumberUsingBitManipultion 
 --------------------------------------------------------------------------------------------------
 283. Find The Missing Number Using Bit Manipultion
 
@@ -41,3 +41,10 @@ public class FindTheMissingNumberUsingBitManipultion {
 	}
 	
 }
+/*
+OUTPUT:
+Input array is {1,3,4,5} and N is 5 -> Missing Number is : 2
+Input array is {1,2,3,4,5,6} and N is 7 -> Missing Number is : 7
+Input array is {1} and N is 1 -> Missing Number is : -1
+Input array is {1,2,3,4,6,7,8,9} and N is 9 -> Missing Number is : 5
+*/
