@@ -6,8 +6,8 @@ Author      : Chandra Sekhar Reddy Muthumula
 Website Link: https://www.youtube.com/watch?v=4zXNepgAvUg&list=PLfQN-EvRGF39Vz4UO18BtA1ocnUhGkvk5&index=15&ab_channel=CodesYourMind
 Modification Log: 
 Date					Name                                            Description
-Sep 14, 2022			Chandra Sekhar Reddy Muthumula					Added Class FlipTheAllBitsOfPositiveNumber 
-Sep 14, 2022			Chandra Sekhar Reddy Muthumula					Added solutionMethod 
+Sep 16, 2022			Chandra Sekhar Reddy Muthumula					Added Class FlipTheAllBitsOfPositiveNumber 
+Sep 16, 2022			Chandra Sekhar Reddy Muthumula					Added solutionMethod 
 --------------------------------------------------------------------------------------------------
 Problem Statement: Find The Unique Two Numbers Using Bit Manipultion
 
@@ -51,3 +51,13 @@ public class FlipTheAllBitsOfPositiveNumber {
 	}
 	
 }
+/*
+OUTPUT:
+Input Number is 10 -> The output Number is : 5
+Input Number is 1 -> The output Number is : 0
+Input Number is 2 -> The output Number is : 1
+Input Number is 3 -> The output Number is : 0
+Input Number is 7 -> The output Number is : 0
+Input Number is 15 -> The output Number is : 0
+Input Number is 31 -> The output Number is : 0
+*/
