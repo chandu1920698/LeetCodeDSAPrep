@@ -66,3 +66,11 @@ public class FindTheUniqueTwoNumbersUsingBitManipultion {
 	}
 	
 }
+
+/*
+OUTPUT:
+Input array is {1,2,3,4,5,3,4,5} -> The Two Numbers are : [1, 2]
+Input array is {1,3,4,5,6,7,3,4,5,6,7,9} -> The Two Numbers are : [1, 9]
+Input array is {1,3} -> The Two Numbers are : [-1, -1]
+Input array is {1,3,4,5,6,7,3,4,5,6,7,9} -> The Two Numbers are : [100, 989]
+*/
