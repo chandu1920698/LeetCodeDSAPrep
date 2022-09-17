@@ -8,6 +8,7 @@ Modification Log:
 Date					Name                                            Description
 Sep 17, 2022			Chandra Sekhar Reddy Muthumula					Added Class FizzBuzz 
 Sep 17, 2022			Chandra Sekhar Reddy Muthumula					Added fizzBuzz 
+Sep 17, 2022			Chandra Sekhar Reddy Muthumula					Added switch case logic 
 --------------------------------------------------------------------------------------------------
 412. Fizz Buzz
 
@@ -83,6 +84,33 @@ class FizzBuzz {
             resultString.set(i, "FizzBuzz");
         }
         System.out.println(resultString);
+		
+		// Method 3
+		/*
+		TC 			: O(N)
+		SC 			: O(1)
+		Recommended : Yes
+		*/
+		
+        for (int i=0; i<n; i++) {
+            switch((i+1)%15) {
+                case 0 : resultString.add( "FizzBuzz");
+                         continue;
+                case 3 : resultString.add( "Fizz");
+                         continue;
+                case 6 : resultString.add( "Fizz");
+                         continue;
+                case 9 : resultString.add( "Fizz");
+                         continue;
+                case 12 : resultString.add( "Fizz");
+                         continue;
+                case 5 : resultString.add( "Buzz");
+                         continue;
+                case 10 : resultString.add( "Buzz");
+                         continue;
+                default : resultString.add( Integer.toString(i+1));
+                         continue;
+            }
         return  resultString;
     }
 }
