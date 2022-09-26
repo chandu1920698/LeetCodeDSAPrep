@@ -56,7 +56,7 @@ public class FirstTwoMaximumElementsInArray {
 			if (max_1 < arr[i]) {
 				max_2 = max_1;
 				max_1 = arr[i];
-			}else if (max_2 < arr[i]) {
+			}else if (max_2 < arr[i] && max_1 != arr[i]) { // Added the condition max_1 != arr[i] to cover the duplicate values
 				max_2 = arr[i];
 			}
 		}
@@ -69,7 +69,7 @@ public class FirstTwoMaximumElementsInArray {
 /*
 OUTPUT:
 
-Input Array : {1,2,3,4,5} -> First Max : 3 Second Max : 2
+Input Array : {1,2,3} -> First Max : 3 Second Max : 2
 Input Array : {1} -> First Max : -1 Second Max : -1
 Input Array : {1,2} -> First Max : 2 Second Max : 1
 Input Array : {1,1} -> First Max : 1 Second Max : 1
