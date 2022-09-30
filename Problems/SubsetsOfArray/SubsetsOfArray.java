@@ -22,7 +22,7 @@ Output: [1,2]
 
 
 */
-import java.util.*;
+// import java.util.*;
 public class SubsetsOfArray {
 	public static void main (String[] args) {
 		// Test Cases

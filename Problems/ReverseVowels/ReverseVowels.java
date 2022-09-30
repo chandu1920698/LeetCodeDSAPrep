@@ -29,8 +29,8 @@ class ReverseVowels {
         int end = ch.length - 1;
         if (1 <= s.length() && s.length() <= 300000 ) {
             while (start < end) {
-                boolean startFlag = false;
-                boolean endFlag = false;
+                // boolean startFlag = false;
+                // boolean endFlag = false;
                 if( !isVowel(ch[start]) ) {
                     start++;
                     continue;

@@ -45,7 +45,7 @@ Constraints:
 -------------------------------------------------------------------------------------------
 */
 import java.util.*;
-class ThreeSum {
+public class ThreeSum {
     public List<List<Integer>> threeSum(int[] nums) {
         int len = nums.length;
         List<List<Integer>> result = new ArrayList<List<Integer>>();

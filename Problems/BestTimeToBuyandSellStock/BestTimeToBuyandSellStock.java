@@ -39,7 +39,7 @@ class BestTimeToBuyandSellStock {
     public int maxProfit(int[] prices) {
         int buyingPrice = Integer.MAX_VALUE;
         int overAllProfit = 0;
-        int todayProfit = 0;
+        // int todayProfit = 0;
         for (int i=0; i<prices.length; i++) {
             if (prices[i] < buyingPrice ) {
                 buyingPrice = prices[i];

@@ -21,7 +21,7 @@ Output: 5 (= 0101)
 
 
 */
-import java.util.*;
+// import java.util.*;
 public class FlipTheAllBitsOfPositiveNumber {
 	public static void main (String[] args) {
 		// Test Cases
