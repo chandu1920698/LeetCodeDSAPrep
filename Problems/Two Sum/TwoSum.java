@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 /*
 Class Name  : TwoSum
 Description : This class consists of the solution for TwoSum.

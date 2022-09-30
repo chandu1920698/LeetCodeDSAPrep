@@ -1,13 +1,13 @@
 /*
-Class Name  : 3Sum
-Description : This class consists of the solution for 3Sum.
+Class Name  : ThreeSum
+Description : This class consists of the solution for ThreeSum.
 Date        : Sep 23, 2022
 Author      : Chandra Sekhar Reddy Muthumula
 Website Link: https://leetcode.com/problems/3sum/
 
 Modification Log: 
 Date					Name                                            Description
-Sep 23, 2022			Chandra Sekhar Reddy Muthumula					Added Class 3Sum 
+Sep 23, 2022			Chandra Sekhar Reddy Muthumula					Added Class ThreeSum 
 Sep 23, 2022			Chandra Sekhar Reddy Muthumula					Added threeSum 
 --------------------------------------------------------------------------------------------------
 15. 3Sum
@@ -44,8 +44,8 @@ Constraints:
 -105 <= nums[i] <= 105
 -------------------------------------------------------------------------------------------
 */
-
-class 3Sum {
+import java.util.*;
+class ThreeSum {
     public List<List<Integer>> threeSum(int[] nums) {
         int len = nums.length;
         List<List<Integer>> result = new ArrayList<List<Integer>>();

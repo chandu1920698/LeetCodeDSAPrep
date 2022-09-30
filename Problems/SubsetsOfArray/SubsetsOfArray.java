@@ -30,7 +30,7 @@ public class SubsetsOfArray {
 		System.out.println("--------------------------------------------------");
 		System.out.println(solutionMethod(new int [] {4,2,3}, 8));
 		System.out.println("--------------------------------------------------");
-		System.out.println(solutionMethod(new int [] {1,5,7,4,2,3}, 21));
+		//System.out.println(solutionMethod(new int [] {1,5,7,4,2,3}, 21));
 		System.out.println("--------------------------------------------------");
 	}
 	
@@ -43,24 +43,35 @@ public class SubsetsOfArray {
 		
 		for (int k=1; k<total-1; k++) {
 			int subsetSum = 0;
+			int count = 0;
+			int tempK = k;
 			for (int i=0; i<arr.length; i++) {
-				
-				// System.out.println("Data -> " + (k & (1<<i)));
-				if ( ((k>>i)&1) == 1 ) {
-					subsetSum += arr[i];
-					// System.out.print(arr[i] + " ");
+				if(((tempK>>i)&1)==1) {
+					count++;
 				}
 			}
+			if (count == 2) {
+				for (int i=0; i<arr.length; i++) {
+				
+					// System.out.println("Data -> " + (k & (1<<i)));
+					if ( ((k>>i)&1) == 1 ) {
+						subsetSum += arr[i];
+						System.out.print(arr[i] + " ");
+					}
+				}
+			}
+			
 			//System.out.println("subsetSum : " + subsetSum);
 			
-			if (money == subsetSum)  {
-				//System.out.println("money == subsetSum"); 
-				return true;
-			} else {
-				continue;
-			}
-			//System.out.println();
+			// if (money == subsetSum)  {
+				// System.out.println("money == subsetSum"); 
+				// return true;
+			// } else {
+				// continue;
+			// }
+			System.out.println();
 		}
+		System.out.println();
 		return false;
 		
 	}

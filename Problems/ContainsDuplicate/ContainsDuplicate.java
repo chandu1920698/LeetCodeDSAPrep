@@ -33,6 +33,7 @@ Constraints:
 
 ------------------------------------------------------------------------------------------------------
 */
+import java.util.*;;
 class ContainsDuplicate {
     public boolean containsDuplicate(int[] nums) {
 	

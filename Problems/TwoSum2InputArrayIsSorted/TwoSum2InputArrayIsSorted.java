@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 /*
 Class Name  : TwoSumII-InputArrayIsSorted
 Description : This class consists of the solution for TwoSum2InputArrayIsSorted.

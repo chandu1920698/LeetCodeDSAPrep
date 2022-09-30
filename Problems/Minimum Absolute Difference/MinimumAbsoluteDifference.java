@@ -39,7 +39,7 @@ Constraints:
 2 <= arr.length <= 105
 -106 <= arr[i] <= 106
 */
-
+import java.util.*;;
 class MinimumAbsoluteDifference {
     public List<List<Integer>> minimumAbsDifference(int[] arr) {
         List<List<Integer>> resultList = new ArrayList<List<Integer>>();

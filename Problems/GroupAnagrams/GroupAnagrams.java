@@ -1,3 +1,5 @@
+import java.util.*;
+
 /*
 Class Name  : GroupAnagrams
 Description : This class consists of the solution for GroupAnagrams.

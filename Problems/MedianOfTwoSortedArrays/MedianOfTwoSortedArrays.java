@@ -44,47 +44,47 @@ class MedianOfTwoSortedArrays {
     TC : O(M+N)
     SC : O(M+N)
     */
-    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        int m = nums1.length;
-        int n = nums2.length;
+    // public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    //     int m = nums1.length;
+    //     int n = nums2.length;
         
-        if ((m+n) == 1) {
-            if (m != 0) return (double)nums1[0];
-            else if (n != 0) return (double)nums2[0];
-        } else {
-            int[] mergedArray = new int[m+n];
-            int index1=0, index2=0;
-            int i = 0;
-            for (i=0; i<m+n && index1<m && index2<n; i++) {
-                if (nums1[index1] < nums2[index2]) {
-                    mergedArray[i] = nums1[index1++];
-                } else if (nums1[index1] > nums2[index2]) {
-                    mergedArray[i] = nums2[index2++];
-                } else {
-                    mergedArray[i++] = nums1[index1++];
-                    mergedArray[i] = nums2[index2++];
-                }
-            }
-            // System.out.println("mergedArray : " + Arrays.toString(mergedArray));
-            while(index1<m && i < m+n){
-                 mergedArray[i++] = nums1[index1++];
-            };
-            // System.out.println("mergedArray : " + Arrays.toString(mergedArray));
-            while(index2<n && i < m+n){
-                 mergedArray[i++] = nums2[index2++];
-            };
-            // System.out.println("mergedArray : " + Arrays.toString(mergedArray));
-            if ((m+n)%2 == 0) {
-                // System.out.println("(mergedArray[(int)((m+n)/2)] : " + (mergedArray[(int)((m+n)/2)]));
-                // System.out.println("mergedArray[(int)((m+n)/2 + 1)] : " + mergedArray[(int)((m+n)/2 + 1)]);
-                return (double)(mergedArray[(int)((m+n)/2-1)] + mergedArray[(int)((m+n)/2)])/2;
-            } else {
-                return (double)(mergedArray[(int)((m+n)/2)]);
-            }
+    //     if ((m+n) == 1) {
+    //         if (m != 0) return (double)nums1[0];
+    //         else if (n != 0) return (double)nums2[0];
+    //     } else {
+    //         int[] mergedArray = new int[m+n];
+    //         int index1=0, index2=0;
+    //         int i = 0;
+    //         for (i=0; i<m+n && index1<m && index2<n; i++) {
+    //             if (nums1[index1] < nums2[index2]) {
+    //                 mergedArray[i] = nums1[index1++];
+    //             } else if (nums1[index1] > nums2[index2]) {
+    //                 mergedArray[i] = nums2[index2++];
+    //             } else {
+    //                 mergedArray[i++] = nums1[index1++];
+    //                 mergedArray[i] = nums2[index2++];
+    //             }
+    //         }
+    //         // System.out.println("mergedArray : " + Arrays.toString(mergedArray));
+    //         while(index1<m && i < m+n){
+    //              mergedArray[i++] = nums1[index1++];
+    //         };
+    //         // System.out.println("mergedArray : " + Arrays.toString(mergedArray));
+    //         while(index2<n && i < m+n){
+    //              mergedArray[i++] = nums2[index2++];
+    //         };
+    //         // System.out.println("mergedArray : " + Arrays.toString(mergedArray));
+    //         if ((m+n)%2 == 0) {
+    //             // System.out.println("(mergedArray[(int)((m+n)/2)] : " + (mergedArray[(int)((m+n)/2)]));
+    //             // System.out.println("mergedArray[(int)((m+n)/2 + 1)] : " + mergedArray[(int)((m+n)/2 + 1)]);
+    //             return (double)(mergedArray[(int)((m+n)/2-1)] + mergedArray[(int)((m+n)/2)])/2;
+    //         } else {
+    //             return (double)(mergedArray[(int)((m+n)/2)]);
+    //         }
             
-        }
-        return 0.0;
-    }
+    //     }
+    //     return 0.0;
+    // }
 
 
     /*

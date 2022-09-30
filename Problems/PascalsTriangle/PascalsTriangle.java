@@ -29,11 +29,12 @@ Constraints:
 1 <= numRows <= 30
 ------------------------------------------------------------------------------------------------------
 */
-class PascalsTriangle {
+import java.util.*;;
+public class PascalsTriangle {
     public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> pascalTraiangle = new ArrayList<List<Integer>>();
         for (int i=0; i<numRows; i++) {
-            List<Integer> tempPascal = new ArrayList<Integer>();
+            ArrayList<Integer> tempPascal = new ArrayList<Integer>();
             int temp = 1;
             for(int k=0; k<=i; k++) {
                 tempPascal.add(temp);
@@ -44,7 +45,7 @@ class PascalsTriangle {
         return pascalTraiangle;
     }
 }
------------------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------------
 /*
 119. PascalsTriangle2
 

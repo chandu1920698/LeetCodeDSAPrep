@@ -1,3 +1,5 @@
+import java.util.HashSet;
+
 /*
 Class Name  : ValidSudoku
 Description : This class consists of the solution for ValidSudoku.

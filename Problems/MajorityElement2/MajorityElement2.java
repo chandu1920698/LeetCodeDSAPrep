@@ -1,3 +1,5 @@
+import java.util.*;
+
 /*
 Class Name  : MajorityElement2
 Description : This class consists of the solution for MajorityElement2.

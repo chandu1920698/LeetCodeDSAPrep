@@ -44,21 +44,21 @@ Constraints:
 ------------------------------------------------------------------------------------------------------
 */
 class BestTimeToBuyandSellStock2 {
-    public int maxProfit(int[] prices) {
-        int buyingPrice = Integer.MAX_VALUE;
-        int cummulativeProfit = 0;
-        for (int i=0; i<prices.length; i++) {
-            if(prices[i] < buyingPrice) {
-                buyingPrice = prices[i];
-            }
-            if (prices[i] - buyingPrice > 0) {
-                cummulativeProfit += (prices[i] - buyingPrice);
-                if ((i) < prices.length) buyingPrice = prices[i];
-            }
-            // System.out.println("cummulativeProfit : "+cummulativeProfit);
-        }
-        return cummulativeProfit;
-    }
+    // public int maxProfit(int[] prices) {
+    //     int buyingPrice = Integer.MAX_VALUE;
+    //     int cummulativeProfit = 0;
+    //     for (int i=0; i<prices.length; i++) {
+    //         if(prices[i] < buyingPrice) {
+    //             buyingPrice = prices[i];
+    //         }
+    //         if (prices[i] - buyingPrice > 0) {
+    //             cummulativeProfit += (prices[i] - buyingPrice);
+    //             if ((i) < prices.length) buyingPrice = prices[i];
+    //         }
+    //         // System.out.println("cummulativeProfit : "+cummulativeProfit);
+    //     }
+    //     return cummulativeProfit;
+    // }
     
     public int maxProfit(int[] prices) {
         int result = 0;

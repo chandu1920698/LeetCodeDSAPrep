@@ -35,8 +35,8 @@ Explanation:
 in range[0,7],the missing range include range[4,6]
 -------------------------------------------------------------------------------------------
 */
-
-public class Solution {
+import java.util.*;;
+public class MissingRanges {
     /**
      * @param nums: a sorted integer array
      * @param lowerLong: An integer
