@@ -3,7 +3,7 @@ Class Name  : BinarySearch
 Description : This class consists of the solution for BinarySearch.
 Date        : Oct 1, 2022
 Author      : Chandra Sekhar Reddy Muthumula
-Website Link: https://leetcode.com/problems/container-with-most-water/
+Website Link: https://leetcode.com/problems/binary-search/
 
 Modification Log: 
 Date					Name                                            Description
