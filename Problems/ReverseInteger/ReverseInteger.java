@@ -39,34 +39,45 @@ Constraints:
 
 class ReverseInteger {
     public int reverse(int x) {
-	    // Method 1
-        // long result = 0; // It was told to avoi this 64 bit data type usage
-        // boolean negativeSignFlag = x < 0 ? true : false; 
-        // x = Math.abs(x);
-        // while(x != 0) {
-            // result = result*10 + x%10;
-            // x/= 10;
-            // System.out.println("result -> " + result);
-            // if (result < Integer.MIN_VALUE || result > Integer.MAX_VALUE) {
-                // return 0;
-            // }
-            
-        // }
-        // if(negativeSignFlag) result *= -1;        
-        // return (int)result;
         
-		// Method 2
-        int reverse = 0;
+        // This is a normal Iteration method
+        // int reverse = 0;
+        // int max = Integer.MAX_VALUE;
+        // int min = Integer.MIN_VALUE;
+        // while (x != 0) {
+        //     if ( ((reverse > max/10) || (reverse >= max/10 && x%10 >= max%10)) || ((reverse < min/10) || (reverse <= min/10 && x%10 <= min%10)) ) {
+        //         //System.out.println("Exceed");
+        //         return 0;
+        //     }
+        //     reverse = reverse*10 + x%10;
+        //     x/= 10;
+        //     //System.out.println("reverse -> " + reverse);
+        // }
+        // return reverse;
+
+        
+        // This is a recursive method
+        return  reverseNumber(x, 0);
+    }
+    
+
+     private static int reverseNumber(int n, int reverse) {
+        /*
+        * N  : No of digits in the integer
+        * TC : O(N)
+        * SC : O(N)
+        */
         int max = Integer.MAX_VALUE;
         int min = Integer.MIN_VALUE;
-        while (x != 0) {
-            if ( ((reverse > max/10) || (reverse >= max/10 && x%10 >= max%10)) || ((reverse < min/10) || (reverse <= min/10 && x%10 <= min%10)) ) {
-                //System.out.println("Exceed");
+        if (Math.abs(n) > 0) {
+            if ((reverse > max/10 || (reverse >= max/10 && n%10 >= max%10) )|| (reverse < min/10 || (reverse <= min/10 && n%10 <= min%10)) ) {
+                // return n < 0 ? Integer.MIN_VALUE : Integer.MAX_VALUE;
                 return 0;
+            } else {
+                reverse = reverse*10 + n%10;
+                n /= 10;
+                return reverseNumber(n, reverse);
             }
-            reverse = reverse*10 + x%10;
-            x/= 10;
-            //System.out.println("reverse -> " + reverse);
         }
         return reverse;
     }
