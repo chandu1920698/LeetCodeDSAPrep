@@ -37,50 +37,74 @@ Follow-up: Could you solve the problem in linear time and in O(1) space?
 
 class MajorityElement {
     public int majorityElement(int[] nums) {
-        int n = nums.length;
-        // int maxValue = Integer.MIN_VALUE;
-        // int count = Integer.MIN_VALUE;
-        int count2 = 1;
-        int maxValue2 = nums[0];
-		
-		/*
-		TC 			: O(N)
-		SC 			: O(N)
-		Recommended : NO - Because it does not have O(1) Space Complexity
-		*/
-		
-         // HashMap<Integer, Integer> map = new HashMap<>();
-        // if (n==1) maxValue = nums[0];
-        // else if (1 <= n && n <= 50000) {
+        int len = nums.length;
+        
+        // This is brute force method
+        /*
+         TC : O(N^2)
+         SC : O(1)
+        */
+        // for (int i=0; i < len; i++) {
+        //     int count = 0;
+        //     for (int j = 0; j < len; j++ ) {
+        //         if(nums[i] == nums[j]) {
+        //             count++;
+        //         }
+        //     }
+        //     if(count > len/2){
+        //         return nums[i];
+        //     }
+        // }
+        
+        // This is HashMap method
+        /*
+         TC : O(N)
+         SC : O(N)
+        */
+        
+        // HashMap<Integer, Integer> map = new HashMap<>();
+        // if (len == 1) return nums[0];
+        // else if (1 < n && n <= 50000) {
         //     for (int i=0; i<n; i++) {
         //         if (!map.containsKey(nums[i])) {
         //             map.put((Integer)nums[i], (Integer)1);
         //         } else {
-        //             if (count < (Integer)(map.get(nums[i]) + 1)) {
-        //                 count = (Integer)(map.get(nums[i]) + 1);
-        //                 maxValue = nums[i];
+        //             if (len/2 < (Integer)(map.get(nums[i]) + 1)) {
+        //                 return nums[i];
         //             }
         //             map.put((Integer)nums[i], (Integer)(map.get(nums[i]) + 1));
         //         }                
         //     }
         // }
-		
-		/*
-		TC 			: O(N)
-		SC 			: O(1)
-		Recommended : YES
-		*/
         
-        for (int i=1; i<n; i++) {
-            if (count2 == 0) {
-                count2++;
-                maxValue2 = nums[i];
-            } else if (maxValue2 == nums[i]) {
-                count2++;
+        // This is Array sorting method
+        /*
+         TC : O(NLogN)
+         SC : O(1)
+        */
+        // Arrays.sort(nums);
+        // return nums[len/2];
+        
+        
+        // This is a new method
+        /*
+         TC : O(N)
+         SC : O(1)
+        */
+        
+        int count = 1;
+        int maxValue = nums[0];
+        for (int i=1; i<len; i++) {
+            if (count == 0) {
+                count++;
+                maxValue = nums[i];
+            } else if (maxValue == nums[i]) {
+                count++;
             } else {
-                count2--;
+                count--;
             }
         }
-        return maxValue2;
+        return maxValue;
+        
     }
 }
