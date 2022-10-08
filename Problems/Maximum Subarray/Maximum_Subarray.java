@@ -59,4 +59,20 @@ class Maximum_Subarray {
         }
         return maxSoFar;
     }
+
+    // Using the prefix sum approach
+    /*
+     * TC : O(N)
+     * SC : O(1)
+    */
+    int len = nums.length;
+    int currentSum = 0;
+    int max = Integer.MIN_VALUE;
+    // Not initialized max with 0 as, we should not consider the empty subsets
+    for(int i=0; i<len; i++) {
+        currentSum += nums[i];
+        max = Math.max(max, currentSum);
+        if(currentSum < 0) currentSum = 0; 
+    }
+    return max;
 }
