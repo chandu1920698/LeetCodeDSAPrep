@@ -1,15 +1,15 @@
 /*
-Class Name  : IntersectionOfTwoArrays
+Class Name  : IntersectionOfEncodeAndDecodeStringsTwoArrays
 Description : This class consists of the solution for IntersectionOfTwoArrays.
-Date        : Oct 5, 2022
+Date        : Oct 12, 2022
 Author      : Chandra Sekhar Reddy Muthumula
-Website Link: https://leetcode.com/problems/intersection-of-two-arrays/
+Website Link: https://www.lintcode.com/problem/659/description
 
 Modification Log: 
 Date					Name                                            Description
-Oct 5, 2022			Chandra Sekhar Reddy Muthumula					Added Class IntersectionOfTwoArrays 
-Oct 5, 2022			Chandra Sekhar Reddy Muthumula					Added intersection 
-Oct 5, 2022			Chandra Sekhar Reddy Muthumula					Added binarySearch 
+Oct 12, 2022			Chandra Sekhar Reddy Muthumula					Added Class EncodeAndDecodeStrings 
+Oct 12, 2022			Chandra Sekhar Reddy Muthumula					Added encode
+Oct 12, 2022			Chandra Sekhar Reddy Muthumula					Added decode
 --------------------------------------------------------------------------------------------------
 659 · Encode and Decode Strings
 
