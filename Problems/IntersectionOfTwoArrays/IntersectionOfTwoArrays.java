@@ -144,4 +144,44 @@ public class IntersectionOfTwoArrays {
         }
         return false;
     }
+    /*
+     public int[] intersection(int[] nums1, int[] nums2) {
+        if (nums1.length == nums2.length && nums1.length == 1) {
+            if(nums1[0] == nums2[0]) {
+                return new int[] {nums1[0]};
+            } else {
+                return new int[] {};
+            }
+        }
+        if(nums1.length > nums2.length) {intersection(nums2, nums1);}
+        
+        Arrays.sort(nums2);
+        int len1 = nums1.length;
+        int len2 = nums2.length;
+        List<Integer> list = new ArrayList<>();
+        for (int i=0; i<len1; i++) {
+            int start = 0;
+            int end = len2 - 1;
+            while(start <= end) {
+                int mid = start + ((end - start) >> 1);
+                
+                if(nums2[mid] == nums1[i] && !list.contains(nums2[mid])) {
+                    list.add(nums2[mid]);
+                } else if(nums2[mid] < nums1[i]) {
+                    start = mid + 1;
+                } else {
+                    end = mid - 1;
+                }
+            }
+        }
+        
+        int[] result = new int[list.size()];
+        int index = 0;
+        for(Integer item : list) {
+            result[index++] = item;
+        }
+        
+        return result;
+    }
+    */
 }
