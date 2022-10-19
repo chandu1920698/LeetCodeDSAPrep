@@ -8,7 +8,8 @@ Website Link: https://leetcode.com/problems/find-pivot-index/
 Modification Log: 
 Date					Name                                            Description
 Sep 25, 2022			Chandra Sekhar Reddy Muthumula					Added Class FindPivotIndex 
-Sep 25, 2022			Chandra Sekhar Reddy Muthumula					Added pivotIndex 
+Sep 25, 2022			Chandra Sekhar Reddy Muthumula					Added pivotIndex
+Oct 19, 2022			Chandra Sekhar Reddy Muthumula					Added pivotIndexBruteForce
 --------------------------------------------------------------------------------------------------
 724. Find Pivot Index
 
@@ -70,5 +71,39 @@ class FindPivotIndex {
             leftSum += nums[i];
          }
         return -1;
+    }
+
+    public int pivotIndexBruteForce(int[] nums) {
+        /*
+         * TC : O(N) + O(N)
+         * SC : O(N) + O(N)
+        */
+        int len = nums.length;
+        int[] leftsum = new int[len];
+        int[] rightsum = new int[len];
+        
+        int left = 0;
+        int right = 0;
+        for (int i = 0; i < len; i++) {
+            left += nums[i]; 
+            leftsum[i] = left;
+            
+            right += nums[len - 1 - i];
+            rightsum[len - 1 - i] = right;
+            
+        }
+        
+        // System.out.println("leftsum :" + Arrays.toString(leftsum));
+        // System.out.println("rightsum :" + Arrays.toString(rightsum));
+        
+        for (int i = 0; i < len; i++) {
+            // System.out.println("Leftsum :" + leftsum[i-1] + " RightSum : " + rightsum[i + 1] );
+            if (leftsum[i] == rightsum[i]) {
+                return i;
+            }
+        }
+        
+        return -1;
+        
     }
 }
