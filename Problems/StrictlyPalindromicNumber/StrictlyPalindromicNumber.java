@@ -1,3 +1,4 @@
+
 /*
 Class Name  : StrictlyPalindromicNumber
 Description : This class consists of the solution for StrictlyPalindromicNumber.
@@ -35,7 +36,7 @@ Constraints:
 4 <= n <= 10^5
 -------------------------------------------------------------------------------------------
 */
-
+package Problems.StrictlyPalindromicNumber;
 class StrictlyPalindromicNumber {
     public boolean isStrictlyPalindromic(int n) {
         return false;

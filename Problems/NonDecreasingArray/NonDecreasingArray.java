@@ -39,7 +39,10 @@ n == nums.length
 package Problems.NonDecreasingArray;
 
 public class NonDecreasingArray {
-    public boolean checkPossibility(int[] nums) {
+    public static void main(String[] args) {
+        checkPossibility(new int[] {12,2});
+    }
+    public static boolean checkPossibility(int[] nums) {
         int len = nums.length;
         if (len == 0) return false;
         boolean changed = false;

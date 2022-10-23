@@ -35,7 +35,7 @@ Constraints:
 -------------------------------------------------------------------------------------------
 */
 package Problems.SubarraySumEqualsK;
-
+import java.util.*;;
 public class SubarraySumEqualsK {
     public int subarraySum(int[] nums, int k) {
         // Lets try Brute force

@@ -70,7 +70,7 @@ public class MaximumProductSubarray {
         return maxProd;
     }
 
-    public int maxProduct(int[] nums) {
+    public int maxProduct2(int[] nums) {
 
         // This is simple PrefixProduct Method
         /*

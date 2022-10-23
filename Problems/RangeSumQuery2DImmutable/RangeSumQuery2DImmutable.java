@@ -55,7 +55,7 @@ package Problems.RangeSumQuery2DImmutable;
 public class RangeSumQuery2DImmutable {
     
     int[][] sum;
-    public NumMatrix(int[][] matrix) {
+    public void NumMatrix(int[][] matrix) {
         int rows = matrix.length + 1;
         int cols = matrix[0].length + 1;
         

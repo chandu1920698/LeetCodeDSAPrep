@@ -39,7 +39,7 @@ Constraints:
 -------------------------------------------------------------------------------------------
 */
 package Problems.NextGreaterElement2;
-
+import java.util.*;;
 public class NextGreaterElement2 {
     public int[] nextGreaterElements(int[] nums) {
         // This is a Brute force method
@@ -91,7 +91,7 @@ public class NextGreaterElement2 {
         return result;
     }
 
-    public int[] nextGreaterElements(int[] nums) {
+    public int[] nextGreaterElements2(int[] nums) {
         // This is a Stack method
         /*
         * TC : O(2* N)

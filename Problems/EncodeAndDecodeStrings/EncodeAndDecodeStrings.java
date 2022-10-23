@@ -33,6 +33,8 @@ One possible encode method is: "we:;say:;:::;yes
 -------------------------------------------------------------------------------------------
 */package Problems.EncodeAndDecodeStrings;
 
+import java.util.*;
+
 public class EncodeAndDecodeStrings {
     /*
      * @param strs: a list of strings

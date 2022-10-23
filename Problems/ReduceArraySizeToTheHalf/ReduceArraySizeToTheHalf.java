@@ -41,7 +41,7 @@ arr.length is even.
 -------------------------------------------------------------------------------------------
 */
 package Problems.ReduceArraySizeToTheHalf;
-
+import java.util.*;;
 public class ReduceArraySizeToTheHalf {
     public int minSetSize(int[] arr) {
         
