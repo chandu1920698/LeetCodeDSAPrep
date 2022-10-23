@@ -85,7 +85,7 @@ public class WordPattern {
             // Checking
             // 1. If the character is present the map
             if (map.containsKey(pattern.charAt(i)) ) {
-                if(words[i] == map.get(pattern.charAt(i))) {
+                if(words[i].equals(map.get(pattern.charAt(i)))) {
                     continue;
                 } else return false;
             } else {
