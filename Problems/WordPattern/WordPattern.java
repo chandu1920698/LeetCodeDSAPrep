@@ -1,30 +1,20 @@
 /*
-Class Name  : ValidSudoku
-Description : This class consists of the solution for ValidSudoku.
-Date        : Sep 23, 2022
+Class Name  : WordPattern
+Description : This class consists of the solution for WordPattern.
+Date        : Oct 23, 2022
 Author      : Chandra Sekhar Reddy Muthumula
-Website Link: https://leetcode.com/problems/valid-sudoku/
+Website Link: https://leetcode.com/problems/word-pattern/submissions/
 
 Modification Log: 
 Date					Name                                            Description
-Sep 23, 2022			Chandra Sekhar Reddy Muthumula					Added Class ValidSudoku 
-Sep 23, 2022			Chandra Sekhar Reddy Muthumula					Added isValidSudoku 
+Oct 23, 2022			Chandra Sekhar Reddy Muthumula					Added Class WordPattern 
+Oct 23, 2022			Chandra Sekhar Reddy Muthumula					Added wordPattern 
 --------------------------------------------------------------------------------------------------
 290. Word Pattern
-Easy
 
-4145
-
-470
-
-Add to List
-
-Share
 Given a pattern and a string s, find if s follows the same pattern.
 
 Here follow means a full match, such that there is a bijection between a letter in pattern and a non-empty word in s.
-
- 
 
 Example 1:
 
