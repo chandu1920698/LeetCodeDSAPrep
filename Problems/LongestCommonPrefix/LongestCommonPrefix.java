@@ -3,7 +3,7 @@ Class Name  : LongestCommonPrefix
 Description : This class consists of the solution for LongestCommonPrefix.
 Date        : Nov 6, 2022
 Author      : Chandra Sekhar Reddy Muthumula
-Link        : https://leetcode.com/problems/is-subsequence/description/
+Link        : https://leetcode.com/problems/longest-common-prefix/
 
 Modification Log: 
 Date				Name                                            Description
