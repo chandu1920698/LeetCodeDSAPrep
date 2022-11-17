@@ -9,7 +9,7 @@ Modification Log:
 Date				    Name                                            Description
 Nov 17, 2022			Chandra Sekhar Reddy Muthumula					Added Class BaseballGame 
 Nov 17, 2022			Chandra Sekhar Reddy Muthumula					Added Constructor RandomizedSet
-Nov 17, 2022			Chandra Sekhar Reddy Muthumula					Added insert
+Nov 17, 2022			Chandra Sekhar Reddy Muthumula					Added isNumeric
 --------------------------------------------------------------------------------------------------
 682. Baseball Game
 Easy
