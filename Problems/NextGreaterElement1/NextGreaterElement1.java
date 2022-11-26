@@ -9,6 +9,7 @@ Modification Log:
 Date					Name                                            Description
 Oct 5, 2022			Chandra Sekhar Reddy Muthumula					Added Class NextGreaterElement1 
 Oct 5, 2022			Chandra Sekhar Reddy Muthumula					Added nextGreaterElement
+Oct 5, 2022			Chandra Sekhar Reddy Muthumula					Added nextGreaterElementBestApproach
 --------------------------------------------------------------------------------------------------
 496. Next Greater Element I
 
@@ -76,6 +77,30 @@ public class NextGreaterElement1 {
                     }
                 } 
             }
+        }
+        return result;
+    }
+
+    public int[] nextGreaterElementBestApproach(int[] nums1, int[] nums2) {
+        /*
+         * TC : O(M + N)
+         * SC : O(N) + O(N)
+        */
+        int nums1_len = nums1.length;
+        int nums2_len = nums2.length;
+        int[] result = new int[nums1_len];
+        HashMap<Integer, Integer> map = new HashMap<>();
+        Stack<Integer> stack = new Stack<>();
+
+        for (int i = 0; i < nums2_len; i++) {
+            while(!stack.isEmpty() && stack.peek() < nums2[i]) {
+                map.put(stack.pop(), nums2[i]);
+            }
+            stack.push(nums2[i]);
+        }
+
+        for (int i = 0; i < nums1_len; i++) {
+            result[i] = map.getOrDefault(nums1[i], -1);
         }
         return result;
     }
