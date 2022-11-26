@@ -3,7 +3,7 @@ Class Name  : MinimumAddToMakeParenthesesValid
 Description : This class consists of the solution for MinimumAddToMakeParenthesesValid.
 Date        : Nov 26, 2022
 Author      : Chandra Sekhar Reddy Muthumula
-Link        : https://leetcode.com/problems/evaluate-reverse-polish-notation/description/
+Link        : https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/description/
 
 Modification Log: 
 Date				    Name                                            Description
