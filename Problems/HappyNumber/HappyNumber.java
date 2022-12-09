@@ -8,6 +8,8 @@ Modification Log:
 Date				Name                                            Description
 Oct 3, 2022			Chandra Sekhar Reddy Muthumula					Added Class HappyNumber 
 Oct 3, 2022			Chandra Sekhar Reddy Muthumula					Added isHappy 
+Dec 9, 2022			Chandra Sekhar Reddy Muthumula					Added isHappyLinkedListApproachSlowFastPointer 
+Dec 9, 2022			Chandra Sekhar Reddy Muthumula					Added findSquare 
 --------------------------------------------------------------------------------------------------
 202. Happy Number
 
@@ -71,5 +73,28 @@ public class HappyNumber {
             }
             return helper(tempSquareSum);
         }
+    }
+
+    public boolean isHappyLinkedListApproachSlowFastPointer(int n) {
+        int slow = n;
+        int fast = n;
+
+        do {
+            slow = findSquare(slow);
+            fast = findSquare(findSquare(fast));
+        } while (slow != fast);
+
+        if (slow == 1) return true;
+        return false;
+    }
+
+    private int findSquare(int number) {
+        int ans = 0;
+        while (number > 0) {
+            int rem = number % 10;
+            ans += rem * rem;
+            number /= 10;
+        }
+        return ans;
     }
 }
