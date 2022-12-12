@@ -1,7 +1,7 @@
 /*
 Class Name  : AddBinary
 Description : This class consists of the solution for AddBinary.
-Date        : Oct 25, 2022
+Created Date: Oct 25, 2022
 Author      : Chandra Sekhar Reddy Muthumula
 Website Link: https://leetcode.com/problems/add-binary/
 
@@ -9,6 +9,7 @@ Modification Log:
 Date					Name                                            Description
 Oct 25, 2022			Chandra Sekhar Reddy Muthumula					Added Class AddBinary 
 Oct 25, 2022			Chandra Sekhar Reddy Muthumula					Added addBinary
+Dec 13, 2022			Chandra Sekhar Reddy Muthumula					Added addBinaryWhileLoopApproach
 --------------------------------------------------------------------------------------------------
 67. Add Binary
 
@@ -56,5 +57,47 @@ public class AddBinary {
         }
         if(carry == 1) result = carry + result; 
         return result;
+    }
+
+    public String addBinaryWhileLoopApproach(String a, String b) {
+        /*
+         * Best TC : O(Max(M, N))
+         * Worst TC : O(M + N)
+         * SC : O(1) 
+        */
+        int aLen = a.length();
+        int bLen = b.length();
+
+        if (aLen == 0) return b;
+        if (bLen == 0) return a;
+
+        int aIndex = aLen - 1;
+        int bIndex = bLen - 1;
+
+        int carry = 0;
+        StringBuilder result = new StringBuilder();
+        while (aIndex >= 0 && bIndex >= 0) {
+            int sum = carry + a.charAt(aIndex--) - '0' + b.charAt(bIndex--) - '0';
+            carry = sum / 2;
+            sum %= 2;
+            result.append(sum);
+        }
+
+        while (aIndex >= 0 ) {
+            int sum = carry + a.charAt(aIndex--) - '0';
+            carry = sum / 2;
+            sum %= 2;
+            result.append(sum);
+        }
+        while (bIndex >= 0) {
+            int sum = carry + b.charAt(bIndex--) - '0';
+            carry = sum / 2;
+            sum %= 2;
+            result.append(sum);
+        }
+        if(carry == 1) {
+            result.append(carry);
+        }
+        return new String(result.reverse());
     }
 }
