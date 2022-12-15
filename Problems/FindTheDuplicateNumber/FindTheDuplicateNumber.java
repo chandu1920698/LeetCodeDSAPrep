@@ -9,6 +9,7 @@ Modification Log:
 Date                Name                                            Description
 Dec 11, 2022		Chandra Sekhar Reddy Muthumula					Added Class FindTheDuplicateNumber
 Dec 11, 2022		Chandra Sekhar Reddy Muthumula					Added findDuplicate
+Dec 15, 2022		Chandra Sekhar Reddy Muthumula					Added findDuplicateCyclicSort
 --------------------------------------------------------------------------------------------------
 287. Find the Duplicate Number
 Medium
@@ -71,4 +72,27 @@ public class FindTheDuplicateNumber {
         }
         return -1;
     }   
+
+    public int findDuplicateCyclicSort(int[] nums) {
+        int len = nums.length;
+        for (int i = 0; i < len; i++) {
+            int correct = nums[i] - 1;
+            while(nums[i] != nums[correct]) {
+                // swap(nums, i, correct);
+                int temp = nums[i];
+                nums[i] = nums[correct];
+                nums[correct] = temp;
+                correct = nums[i] - 1;
+            }
+        }
+        return nums[len -1];
+    }
+
+    public void swap(int[] arr, int i, int j) {
+        if (i != j) {
+            arr[i] ^= arr[j];
+            arr[j] ^= arr[i];
+            arr[i] ^= arr[j];
+        }
+    }
 }
