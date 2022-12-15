@@ -58,4 +58,32 @@ class MissingNumber {
         }
         return missingNumber;
     }
+    public int missingNumberCyclicSorting(int[] nums) {
+        /* 
+         * Cyclic Sort:
+         * TC : O(N)
+         * SC : O(1)
+        */
+        int len = nums.length;
+        for (int i = 0; i < len; i++) {
+            while(nums[i] != len && nums[i] != i ) {
+                swap(nums,i, nums[i]);
+            }
+        }
+        // System.out.println("Array : " + Arrays.toString(nums));
+        for (int i = 0; i < len; i++) {
+            if (nums[i] != i) {
+                return i;
+            }
+        }
+        return len;
+    }
+
+    public void swap(int[] arr, int i, int j) {
+        if(i != j) {
+            arr[i] ^= arr[j];
+            arr[j] ^= arr[i];
+            arr[i] ^= arr[j]; 
+        }
+    }
 }
