@@ -1,7 +1,7 @@
 /*
 Class Name  : FindAllNumbersDisappearedInArray
 Description : This class consists of the solution for FindAllNumbersDisappearedInArray.
-Date        : Oct 22, 2022
+Craeted Date: Oct 22, 2022
 Author      : Chandra Sekhar Reddy Muthumula
 Website Link: https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
 
@@ -10,6 +10,7 @@ Date					Name                                            Description
 Oct 22, 2022			Chandra Sekhar Reddy Muthumula					Added Class FindAllNumbersDisappearedInArray 
 Oct 22, 2022			Chandra Sekhar Reddy Muthumula					Added findDisappearedNumbers
 Oct 22, 2022			Chandra Sekhar Reddy Muthumula					Added findDisappearedNumbersEfficient
+Dec 15, 2022			Chandra Sekhar Reddy Muthumula					Added findDisappearedNumbersCyclicSort
 --------------------------------------------------------------------------------------------------
 448. Find All Numbers Disappeared in an Array
 
@@ -77,5 +78,36 @@ public class FindAllNumbersDisappearedInArray {
             if (nums[i] > 0)
                 result.add(i + 1);
         return result;
+    }
+
+    public List<Integer> findDisappearedNumbersCyclicSort(int[] nums) {
+        /* 
+         * TC : O(N)
+         * SC : O(1)
+        */
+        int len = nums.length;
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < len; i++) {
+            int correct = nums[i] - 1;
+            while(nums[i] <= len && nums[i] != nums[correct]) {
+                swap(nums, i, correct);
+                correct = nums[i] - 1;
+            }
+        }
+        
+        for (int i = 0; i < len; i++) {
+            if (i + 1 != nums[i]) {
+                list.add(i + 1);
+            }
+        }
+        return list;
+    }
+
+    public void swap(int[] arr, int i, int j) {
+        if(i != j) {
+            arr[i] ^= arr[j];
+            arr[j] ^= arr[i];
+            arr[i] ^= arr[j]; 
+        }
     }
 }
