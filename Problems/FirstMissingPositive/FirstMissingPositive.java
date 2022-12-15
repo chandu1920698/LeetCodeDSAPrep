@@ -1,7 +1,7 @@
 /*
 Class Name  : FirstMissingPositive
 Description : This class consists of the solution for FirstMissingPositive.
-Date        : Nov 23, 2022
+Created Date: Nov 23, 2022
 Author      : Chandra Sekhar Reddy Muthumula
 Link        : https://leetcode.com/problems/first-missing-positive/description/
 
@@ -11,6 +11,7 @@ Nov 23, 2022			Chandra Sekhar Reddy Muthumula					Added Class FirstMissingPositi
 Nov 23, 2022			Chandra Sekhar Reddy Muthumula					Added firstMissingPositiveBestMethod
 Nov 23, 2022			Chandra Sekhar Reddy Muthumula					Added firstMissingPositiveAvgMethod
 Nov 23, 2022			Chandra Sekhar Reddy Muthumula					Added firstMissingPositiveLeastBestMethod
+Dec 15, 2022			Chandra Sekhar Reddy Muthumula					Added firstMissingPositiveCyclicSort
 --------------------------------------------------------------------------------------------------
 41. First Missing Positive
 Hard
@@ -119,5 +120,29 @@ public class FirstMissingPositive {
                 i++;
         }
         return minMissingNumber;
+    }
+
+    public int firstMissingPositiveCyclicSort(int[] nums) {
+        int len = nums.length;
+        for (int i = 0; i < len; i++) {
+            if (nums[i] > 0) {
+                int correct = nums[i] - 1;
+                while (nums[i] > 0 && nums[i] <= len && nums[i] != nums[correct]) {
+                    int temp = nums[i];
+                    nums[i] = nums[correct];
+                    nums[correct] = temp;
+                    correct = nums[i] - 1;
+                }
+            }
+            
+        }
+
+        for (int i = 0; i < len; i++) {
+            if (nums[i] != i + 1) {
+                return 1 + i;
+            }
+        }
+        
+        return len + 1;
     }
 }
