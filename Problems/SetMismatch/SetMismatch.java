@@ -63,4 +63,23 @@ public class SetMismatch {
         }
         return list.stream().mapToInt(Integer::intValue).toArray();
     }
+
+    public int[] findErrorNumsUpdated(int[] nums) {
+        int len = nums.length;
+        for (int i = 0; i < len; i++) {
+            int correct = nums[i] - 1;
+            while (nums[i] != nums[correct]) {
+                int temp = nums[i];
+                nums[i] = nums[correct];
+                nums[correct] = temp;
+                correct = nums[i] - 1;
+            }
+        }
+        for (int i = 0; i < len; i++) {
+            if (nums[i] != i + 1) {
+                return new int[] {nums[i], i + 1};
+            }
+        }
+        return new int[] {};
+    }
 }
