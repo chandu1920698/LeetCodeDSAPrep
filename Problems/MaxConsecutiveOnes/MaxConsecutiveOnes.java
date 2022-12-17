@@ -1,7 +1,7 @@
 /*
 Class Name  : MaxConsecutiveOnes
 Description : This class consists of the solution for MaxConsecutiveOnes.
-Date        : Nov 13, 2022
+Created Date: Nov 13, 2022
 Author      : Chandra Sekhar Reddy Muthumula
 Link        : https://leetcode.com/problems/max-consecutive-ones/description/
 
@@ -9,6 +9,7 @@ Modification Log:
 Date				    Name                                            Description
 Nov 13, 2022			Chandra Sekhar Reddy Muthumula					Added Class MaxConsecutiveOnes 
 Nov 13, 2022			Chandra Sekhar Reddy Muthumula					Added findMaxConsecutiveOnes
+Dec 17, 2022			Chandra Sekhar Reddy Muthumula					Added findMaxConsecutiveOnesCunterApproach
 --------------------------------------------------------------------------------------------------
 485. Max Consecutive Ones
 Easy
@@ -58,5 +59,33 @@ public class MaxConsecutiveOnes {
             
         }
         return max_ones;
+    }
+
+    public int findMaxConsecutiveOnesCunterApproach(int[] nums) {
+        /*  
+         * Best TC : O(N)
+         * Worsrt TC : O(N)
+         * SC : O(1)
+        */
+        int len = nums.length;
+        /* If Nums is null or the array is empty return zero */
+        if (nums == null || len == 0) {
+            return 0;
+        }
+        int index = 0;
+        /* Skip the starting zeros */
+        while (index < len && nums[index] == 0) {
+            index++;
+        }
+        int maxConOnes = 0, onesCount = 0;
+        for (int i = index; i < len; i++) {
+            if(nums[i] == 1) {
+                onesCount++;
+                maxConOnes = Math.max(maxConOnes, onesCount);
+            } else {
+                onesCount = 0;
+            }
+        }
+        return maxConOnes;
     }
 }
