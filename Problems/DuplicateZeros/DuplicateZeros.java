@@ -11,6 +11,7 @@ Sep 26, 2022			Chandra Sekhar Reddy Muthumula					Added duplicateZeros
 Dec 17, 2022			Chandra Sekhar Reddy Muthumula					Added duplicateZerosBruteForce
 Dec 17, 2022			Chandra Sekhar Reddy Muthumula					Added duplicateZerosBruteForceTCCompromised
 Dec 17, 2022			Chandra Sekhar Reddy Muthumula					Added shiftArray
+Dec 17, 2022			Chandra Sekhar Reddy Muthumula					Added duplicateZerosQueueApproach
 --------------------------------------------------------------------------------------------------
 1089. Duplicate Zeros
 Given a fixed-length integer array arr, duplicate each occurrence of zero, shifting the remaining elements to the right.
@@ -33,6 +34,9 @@ Constraints:
 0 <= arr[i] <= 9
 ------------------------------------------------------------------------------------------------------
 */
+
+import java.util.*;
+
 class DuplicateZeros {
     // public void duplicateZeros(int[] arr) {
     // int arrLength = arr.length;
@@ -94,7 +98,7 @@ class DuplicateZeros {
          * TC : O(2*N)
          * SC : O(N)
          * Space complexity is compromised
-        */
+         */
         int len = arr.length;
 
         int[] newArr = new int[len];
@@ -116,11 +120,11 @@ class DuplicateZeros {
     }
 
     public void duplicateZerosBruteForceTCCompromised(int[] arr) {
-        /* 
+        /*
          * TC : O(N^2)
          * SC : O(1)
          * Brute force Time Complexity compromised
-        */
+         */
         int len = arr.length;
         for (int i = 0; i < len; i++) {
             if (arr[i] == 0) {
@@ -132,7 +136,6 @@ class DuplicateZeros {
         }
     }
 
-
     private void shiftArray(int[] arr, int index) {
         int len = arr.length;
         if (index < len) {
@@ -141,5 +144,24 @@ class DuplicateZeros {
             }
         }
         // System.out.println(Arrays.toString(arr));
+    }
+
+    public void duplicateZerosQueueApproach(int[] arr) {
+        /* 
+         * TC : O(N)
+         * SC : O(N)
+        */
+        int len = arr.length;
+        Queue<Integer> queue = new LinkedList<>();
+
+        for (int i = 0; i < len; i++) {
+            if (arr[i] == 0) {
+                queue.add(0);
+                queue.add(0);
+            } else {
+                queue.add(arr[i]);
+            }
+            arr[i] = queue.poll();
+        }
     }
 }
