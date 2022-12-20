@@ -1,7 +1,7 @@
 /*
 Class Name  : BaseballGame
 Description : This class consists of the solution for BaseballGame.
-Date        : Nov 17, 2022
+Created Date: Nov 17, 2022
 Author      : Chandra Sekhar Reddy Muthumula
 Link        : https://leetcode.com/problems/baseball-game/description/
 
@@ -10,6 +10,7 @@ Date				    Name                                            Description
 Nov 17, 2022			Chandra Sekhar Reddy Muthumula					Added Class BaseballGame 
 Nov 17, 2022			Chandra Sekhar Reddy Muthumula					Added Constructor RandomizedSet
 Nov 17, 2022			Chandra Sekhar Reddy Muthumula					Added isNumeric
+Dec 20, 2022			Chandra Sekhar Reddy Muthumula					Added calPointsBestApproach
 --------------------------------------------------------------------------------------------------
 682. Baseball Game
 Easy
@@ -84,6 +85,30 @@ import java.util.*;
 public class BaseballGame {
     public static void main(String[] args) {
 
+    }
+    
+    public int calPointsBestApproach(String[] operations) {
+        Stack<Integer> score = new Stack<>();
+        for (String opr : operations) {
+            if (opr.equals("+")) {
+                int head = score.pop();
+                int newScore = head + score.peek();
+                score.push(head);
+                score.push(newScore);
+            } else if (opr.equals("C")) {
+                score.pop();
+            } else if (opr.equals("D")) {
+                score.push(2 * score.peek());
+            } else {
+                score.push(Integer.valueOf(opr));
+            }
+        }
+
+        int scoreSum = 0;
+        while(!score.isEmpty()) {
+            scoreSum += score.pop();
+        }
+        return scoreSum;
     }
 
     public int calPoints(String[] operations) {
