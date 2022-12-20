@@ -9,52 +9,40 @@ Date					Name                                            Description
 Dec 20, 2022			Chandra Sekhar Reddy Muthumula					Added Class RankTransformofanArray 
 Dec 20, 2022			Chandra Sekhar Reddy Muthumula					Added arrayRankTransform
 --------------------------------------------------------------------------------------------------
-1598. Crawler Log Folder
+1331. Rank Transform of an Array
 Easy
-680
-50
+1.3K
+62
 Companies
-The Leetcode file system keeps a log each time some user performs a change folder operation.
+Given an array of integers arr, replace each element with its rank.
 
-The operations are described below:
+The rank represents how large the element is. The rank has the following rules:
 
-"../" : Move to the parent folder of the current folder. (If you are already in the main folder, remain in the same folder).
-"./" : Remain in the same folder.
-"x/" : Move to the child folder named x (This folder is guaranteed to always exist).
-You are given a list of strings logs where logs[i] is the operation performed by the user at the ith step.
-
-The file system starts in the main folder, then the operations in logs are performed.
-
-Return the minimum number of operations needed to go back to the main folder after the change folder operations.
-
+Rank is an integer starting from 1.
+The larger the element, the larger the rank. If two elements are equal, their rank must be the same.
+Rank should be as small as possible.
  
 
 Example 1:
 
-
-
-Input: logs = ["d1/","d2/","../","d21/","./"]
-Output: 2
-Explanation: Use this change folder operation "../" 2 times and go back to the main folder.
+Input: arr = [40,10,20,30]
+Output: [4,1,2,3]
+Explanation: 40 is the largest element. 10 is the smallest. 20 is the second smallest. 30 is the third smallest.
 Example 2:
 
-
-
-Input: logs = ["d1/","d2/","./","d3/","../","d31/"]
-Output: 3
+Input: arr = [100,100,100]
+Output: [1,1,1]
+Explanation: Same elements share the same rank.
 Example 3:
 
-Input: logs = ["d1/","../","../","../"]
-Output: 0
+Input: arr = [37,12,28,9,100,56,80,5,12]
+Output: [5,3,4,2,8,6,7,1,3]
  
 
 Constraints:
 
-1 <= logs.length <= 103
-2 <= logs[i].length <= 10
-logs[i] contains lowercase English letters, digits, '.', and '/'.
-logs[i] follows the format described in the statement.
-Folder names consist of lowercase English letters and digits.
+0 <= arr.length <= 105
+-109 <= arr[i] <= 109
 ------------------------------------------------------------------------------------------------------
 */
 package Problems.RankTransformofanArray;
