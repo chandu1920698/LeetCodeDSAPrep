@@ -10,6 +10,7 @@ Date					Name                                            Description
 Sep 19, 2022			Chandra Sekhar Reddy Muthumula					Added Class BestTimeToBuyandSellStock 
 Sep 19, 2022			Chandra Sekhar Reddy Muthumula					Added maxProfit
 Dec 26, 2022			Chandra Sekhar Reddy Muthumula					Added maxProfitStackApproach
+Dec 26, 2022			Chandra Sekhar Reddy Muthumula					Added maxProfitBestApproach
 --------------------------------------------------------------------------------------------------
 121. Best Time to Buy and Sell Stock
 
@@ -81,6 +82,19 @@ class BestTimeToBuyandSellStock {
             if (profitArray[i] > 0) {
                 maxGain = Math.max(maxGain, profitArray[i] - prices[i]);
             }
+        }
+        return maxGain;
+    }
+    public int maxProfitBestApproach(int[] prices) {
+        int len = prices.length;
+        int buyingPrice = Integer.MAX_VALUE;
+        int maxGain = 0;
+        for (int i = 0; i < len; i++) {
+            // Buying price has to be minimum
+            buyingPrice = Math.min(buyingPrice, prices[i]);
+            // Selling price is todays price
+            int sellingPrice = prices[i];
+            maxGain = Math.max(maxGain, sellingPrice - buyingPrice);
         }
         return maxGain;
     }
