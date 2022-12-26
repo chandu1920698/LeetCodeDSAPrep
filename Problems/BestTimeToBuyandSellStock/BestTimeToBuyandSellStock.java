@@ -1,13 +1,15 @@
+
 /*
 Class Name  : BestTimeToBuyandSellStock
 Description : This class consists of the solution for BestTimeToBuyandSellStock.
-Date        : Sep 19, 2022
+Created Date: Sep 19, 2022
 Author      : Chandra Sekhar Reddy Muthumula
 Website Link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 Modification Log: 
 Date					Name                                            Description
 Sep 19, 2022			Chandra Sekhar Reddy Muthumula					Added Class BestTimeToBuyandSellStock 
 Sep 19, 2022			Chandra Sekhar Reddy Muthumula					Added maxProfit
+Dec 26, 2022			Chandra Sekhar Reddy Muthumula					Added maxProfitStackApproach
 --------------------------------------------------------------------------------------------------
 121. Best Time to Buy and Sell Stock
 
@@ -35,17 +37,51 @@ Constraints:
 0 <= prices[i] <= 104
 ------------------------------------------------------------------------------------------------------
 */
+import java.util.*;
+
 class BestTimeToBuyandSellStock {
     public int maxProfit(int[] prices) {
         int buyingPrice = Integer.MAX_VALUE;
         int overAllProfit = 0;
         // int todayProfit = 0;
-        for (int i=0; i<prices.length; i++) {
-            if (prices[i] < buyingPrice ) {
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < buyingPrice) {
                 buyingPrice = prices[i];
             }
-            overAllProfit = overAllProfit > prices[i] - buyingPrice ?  overAllProfit : prices[i] - buyingPrice;
+            overAllProfit = overAllProfit > prices[i] - buyingPrice ? overAllProfit : prices[i] - buyingPrice;
         }
         return overAllProfit;
+    }
+
+    public int maxProfitStackApproach(int[] prices) {
+        /*
+         * TC : O(N) + O(N)
+         * SC : O(N) + O(N)
+         */
+        int len = prices.length;
+        Stack<Integer> maxStack = new Stack<>();
+        int[] profitArray = new int[len];
+        for (int i = len - 1; i >= 0; i--) {
+            while (!maxStack.isEmpty() && maxStack.peek() <= prices[i]) {
+                maxStack.pop();
+            }
+
+            if (maxStack.isEmpty()) {
+                profitArray[i] = -1;
+            } else {
+                profitArray[i] = maxStack.peek();
+            }
+
+            if (maxStack.isEmpty() || !maxStack.isEmpty() && maxStack.peek() < prices[i]) {
+                maxStack.push(prices[i]);
+            }
+        }
+        int maxGain = 0;
+        for (int i = 0; i < len; i++) {
+            if (profitArray[i] > 0) {
+                maxGain = Math.max(maxGain, profitArray[i] - prices[i]);
+            }
+        }
+        return maxGain;
     }
 }
