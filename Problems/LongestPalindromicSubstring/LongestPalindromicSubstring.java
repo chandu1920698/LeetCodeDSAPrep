@@ -1,7 +1,7 @@
 /*
 Class Name  : LongestPalindromicSubstring
 Description : This class consists of the solution for LongestCommonPrefix.
-Date        : Nov 8, 2022
+Created Date: Nov 8, 2022
 Author      : Chandra Sekhar Reddy Muthumula
 Link        : https://leetcode.com/problems/longest-palindromic-substring/description/
 
@@ -9,19 +9,12 @@ Modification Log:
 Date				Name                                            Description
 Nov 8, 2022			Chandra Sekhar Reddy Muthumula					Added Class LongestPalindromicSubstring 
 Nov 8, 2022			Chandra Sekhar Reddy Muthumula					Added longestPalindrome 
+Dec 28, 2022		 Sekhar Reddy Muthumula					        Added longestPalindromeBruteForce 
+Dec 28, 2022		Chandra Sekhar Reddy Muthumula					Added isPalindrome 
 --------------------------------------------------------------------------------------------------
 5. Longest Palindromic Substring
-Medium
-22.4K
-1.3K
-Companies
-Given a string s, return the longest 
-palindromic
- 
-substring
- in s.
+Given a string s, return the longest palindromic substring in s.
 
- 
 
 Example 1:
 
@@ -71,5 +64,43 @@ public class LongestPalindromicSubstring {
             }
         }
         return max_palindrome;
+    }
+
+    public String longestPalindromeBruteForce(String s) {
+        /* 
+         * TC : O(N ^ 3)
+         * SC : O(1)
+        */
+        int max_len = 0;
+        String maxPalidrome = "";
+        int len = s.length();
+        for (int i = 0; i < len; i++) {
+            for(int j = i + 1; j <= len; j++) {
+                if(isPalindrome(s.substring(i, j))) {
+                    if(max_len < j - i) {
+                        max_len = j  - i;
+                        maxPalidrome = s.substring(i, j);
+                    }
+                }
+            }
+        }
+        return maxPalidrome;
+    }
+
+    public boolean isPalindrome(String str) {
+        int len = str.length();
+        if(len == 1) {
+            return true;
+        }
+        int start = 0;
+        int end = len - 1;
+        while(start <= end) {
+            if(str.charAt(start) != str.charAt(end)) {
+                return false;
+            }
+            start++;
+            end--;
+        }
+        return true;
     }
 }
