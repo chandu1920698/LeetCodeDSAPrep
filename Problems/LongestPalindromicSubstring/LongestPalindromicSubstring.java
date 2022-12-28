@@ -11,6 +11,8 @@ Nov 8, 2022			Chandra Sekhar Reddy Muthumula					Added Class LongestPalindromicS
 Nov 8, 2022			Chandra Sekhar Reddy Muthumula					Added longestPalindrome 
 Dec 28, 2022		 Sekhar Reddy Muthumula					        Added longestPalindromeBruteForce 
 Dec 28, 2022		Chandra Sekhar Reddy Muthumula					Added isPalindrome 
+Dec 28, 2022		Chandra Sekhar Reddy Muthumula					Added longestPalindromeBestApproach
+Dec 28, 2022		Chandra Sekhar Reddy Muthumula					Added maxLength
 --------------------------------------------------------------------------------------------------
 5. Longest Palindromic Substring
 Given a string s, return the longest palindromic substring in s.
@@ -102,5 +104,36 @@ public class LongestPalindromicSubstring {
             end--;
         }
         return true;
+    }
+
+    public String longestPalindromeBestApproach(String s) {
+        /* 
+         * TC : O(N ^ 2)
+         * SC : O(N)
+        */
+        int len = s.length();
+        int start = 0, end = 0;
+        for (int i = 0; i < len; i++) {
+            int len1 = maxLength(s, i, i);
+            int len2 = maxLength(s, i, i + 1);
+            int maxLen = Math.max(len1, len2);
+            if(maxLen > end - start) {
+                start = i - ((maxLen - 1) / 2);
+                end = i + (maxLen / 2);
+            }
+
+        }
+        return s.substring(start, end + 1);
+    }
+
+    public int maxLength(String str, int left, int right) {
+        if(str == null || right < left) {
+            return 0;
+        }
+        while(left >= 0 && right < str.length() && str.charAt(left) == str.charAt(right)) {
+            left--;
+            right++;
+        }
+        return right - left - 1;
     }
 }
