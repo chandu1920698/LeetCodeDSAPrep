@@ -72,4 +72,46 @@ public class CanPlaceFlowers {
         
         return false;
     }
+
+    /*
+    public boolean canPlaceFlowers(int[] flowerbed, int n) {
+        int len = flowerbed.length;
+        int[] newFlowerBed = new int[len + 2];
+        for (int i = 0; i < len; i++) {
+            newFlowerBed[i + 1] = flowerbed[i];
+        }
+        // System.out.println("Flower Bed New :"+ Arrays.toString(newFlowerBed) );
+        return canPlaceFlowersHelper(newFlowerBed, 1, n);
+    }
+    
+    public boolean canPlaceFlowersHelper(int[] flowerbed, int pos, int n) {
+        if (n == 0) {
+            return true;
+        }
+        int len = flowerbed.length;
+        if (pos == len - 1 ) {
+            return false;
+        }
+        if (isSafe(flowerbed, pos)) {
+            flowerbed[pos] = 1;
+            if (canPlaceFlowersHelper(flowerbed, pos + 1, n - 1)) {
+                return true;
+            } else {
+                flowerbed[pos] = 0;
+            }            
+        }
+        canPlaceFlowersHelper(flowerbed, pos + 1, n);
+        return false;
+    }
+    
+    public boolean isSafe(int[] flowerbed, int pos) {        
+        if (pos - 1  >= 0 && pos + 1 < flowerbed.length - 1 ) {
+            if (flowerbed[pos - 1] == 0 && flowerbed[pos + 1] == 0 && flowerbed[pos] == 0) {
+                return true;
+            }
+        }  
+        System.out.println("Pos : " + pos);
+        return false;
+    }
+    */
 }

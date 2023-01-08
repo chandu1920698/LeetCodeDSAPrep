@@ -55,13 +55,14 @@ public class HouseRobber {
         */
         int len = nums.length;
         int dp[] = new int[nums.length];
+        Arrays.fill(dp, -1);
         return robRecursionHelper(nums, len - 1, dp);
     }
     public int robRecursionHelper(int[] nums, int n, int[] dp) {
         if(n < 0) return 0;
         if(n == 0) return nums[0];
         if(n == 1) return Math.max(nums[1], nums[0]);
-        if(dp[n] != 0) return dp[n];
+        if(dp[n] != -1) return dp[n];
         dp[n] = Math.max(nums[n] +  robRecursionHelper(nums, n-2 ,dp),robRecursionHelper(nums, n - 1, dp) );
         return dp[n];
     }
