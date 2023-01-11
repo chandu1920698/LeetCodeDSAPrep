@@ -11,6 +11,7 @@ Jan 11, 2022			Chandra Sekhar Reddy Muthumula					Added Class NumberOfIslands
 Jan 11, 2022			Chandra Sekhar Reddy Muthumula					Added numIslands
 Jan 11, 2022			Chandra Sekhar Reddy Muthumula					Added helper2 
 Jan 11, 2022			Chandra Sekhar Reddy Muthumula					Added helper1
+Jan 11, 2022			Chandra Sekhar Reddy Muthumula					Added helper3
 --------------------------------------------------------------------------------------------------
 200. Number of Islands
 Medium
@@ -96,6 +97,23 @@ public class NumberOfIslands {
         }
         if(i + 1 < grid.length && grid[i + 1][j] == '1') { // Moving down
             helper(grid, i + 1, j);
+        }
+    }
+
+    static int[][] directions = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+
+    private void helper3(char[][] grid, int i, int j) {
+        if(i >= 0 && i < grid.length && j >= 0 && j < grid[0].length) {
+            if(grid[i][j] == '1') {
+                grid[i][j] = '0';
+                for (int[] direction : directions) {
+                    int row = i + direction[0];
+                    int column = j + direction[1];
+                    helper(grid, row, column);
+                }
+            }            
+        } else {
+            return;
         }
     }
 }
