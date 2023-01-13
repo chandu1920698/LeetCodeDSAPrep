@@ -11,7 +11,7 @@ Jan 12, 2022			Chandra Sekhar Reddy Muthumula					Added Class BinaryTreeInorderT
 Jan 12, 2022			Chandra Sekhar Reddy Muthumula					Added inorderTraversal
 Jan 12, 2022			Chandra Sekhar Reddy Muthumula					Added inorderTraversalHelper
 Jan 12, 2022			Chandra Sekhar Reddy Muthumula					Added helper
-Jan 12, 2022			Chandra Sekhar Reddy Muthumula					Added preorderTraversal
+Jan 12, 2022			Chandra Sekhar Reddy Muthumula					Added inorderTraversalIterative
 --------------------------------------------------------------------------------------------------
 94. Binary Tree Inorder Traversal
 Easy
@@ -68,23 +68,25 @@ public class BinaryTreeInorderTraversal {
         inorderTraversalHelper(root.right, list);
     }
 
-    public List<Integer> preorderTraversal(TreeNode root) {
-        /* 
-         * TC : O(N)
-         * SC : O(N)
-        */
+    public List<Integer> inorderTraversalIterative(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         if(root == null) return list;
         TreeNode tempRoot = root;
         Stack<TreeNode> stack =  new Stack<>();
-        stack.push(tempRoot);
-        while(!stack.isEmpty()){
-            tempRoot = stack.pop();
-            list.add(tempRoot.val);
-            if(tempRoot.right != null) stack.push(tempRoot.right);
-            if(tempRoot.left != null) stack.push(tempRoot.left);
+        while(true) {
+            if(tempRoot != null) {
+                stack.push(tempRoot);
+                tempRoot = tempRoot.left; 
+            } else {
+                if(stack.isEmpty()) {
+                    break;
+                }
+                tempRoot = stack.pop();
+                list.add(tempRoot.val);
+                tempRoot = tempRoot.right;
+            }
         }
-        return list;
+        return list;        
     }
 }
 
