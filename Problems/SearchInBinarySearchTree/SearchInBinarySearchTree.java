@@ -57,6 +57,19 @@ public class SearchInBinarySearchTree {
         }
         return root;
     }
+
+    public TreeNode searchBSTRecursion(TreeNode root, int val) {
+        if(root == null ||  root.val == val) {
+            return root;
+        } else {
+            if(root.val < val) {
+                root = searchBSTRecursion(root.right, val);
+            } else {
+                root = searchBSTRecursion(root.left, val);
+            }
+        }
+        return root;
+    }
 }
 
 class TreeNode {
