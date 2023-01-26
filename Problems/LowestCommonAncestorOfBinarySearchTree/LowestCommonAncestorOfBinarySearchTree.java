@@ -1,0 +1,96 @@
+/*
+Class Name  : LowestCommonAncestorOfBinarySearchTree
+Description : This class consists of the solution for LowestCommonAncestorOfBinarySearchTree.
+Created Date: Jan 26, 2023
+Author      : Chandra Sekhar Reddy Muthumula
+Website Link: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/
+
+Modification Log: 
+Date				    Name                                            Description
+Jan 26, 2022			Chandra Sekhar Reddy Muthumula					Added Class LowestCommonAncestorOfBinarySearchTree
+Jan 26, 2022			Chandra Sekhar Reddy Muthumula					Added lowestCommonAncestor
+--------------------------------------------------------------------------------------------------
+235. Lowest Common Ancestor of a Binary Search Tree
+Medium
+8.7K
+248
+Companies
+Given a binary search tree (BST), find the lowest common ancestor (LCA) node of two given nodes in the BST.
+
+According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).”
+
+ 
+
+Example 1:
+
+
+Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
+Output: 6
+Explanation: The LCA of nodes 2 and 8 is 6.
+Example 2:
+
+
+Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
+Output: 2
+Explanation: The LCA of nodes 2 and 4 is 2, since a node can be a descendant of itself according to the LCA definition.
+Example 3:
+
+Input: root = [2,1], p = 2, q = 1
+Output: 2
+ 
+
+Constraints:
+
+The number of nodes in the tree is in the range [2, 105].
+-109 <= Node.val <= 109
+All Node.val are unique.
+p != q
+p and q will exist in the BST.
+-------------------------------------------------------------------------------------------
+*/
+package Problems.LowestCommonAncestorOfBinarySearchTree;
+
+public class LowestCommonAncestorOfBinarySearchTree {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        /* 
+         * TC : O(N)
+         * SC : O(N)
+        */
+        if(root == null) {
+            return null;
+        }
+        if(p.val == root.val || q.val == root.val) {
+            return root;
+        }
+        TreeNode leftLca = lowestCommonAncestor(root.left, p, q);
+        TreeNode rightLca = lowestCommonAncestor(root.right, p, q);
+
+        if(leftLca != null && rightLca != null) {
+            return root;
+        }
+        if(leftLca != null) {
+            return leftLca;
+        } else {
+            return rightLca;
+        }
+    }
+}
+
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode() {
+    }
+
+    TreeNode(int val) {
+        this.val = val;
+    }
+
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
