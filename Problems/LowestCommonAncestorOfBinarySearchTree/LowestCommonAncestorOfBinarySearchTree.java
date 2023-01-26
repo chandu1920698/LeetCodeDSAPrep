@@ -9,6 +9,7 @@ Modification Log:
 Date				    Name                                            Description
 Jan 26, 2022			Chandra Sekhar Reddy Muthumula					Added Class LowestCommonAncestorOfBinarySearchTree
 Jan 26, 2022			Chandra Sekhar Reddy Muthumula					Added lowestCommonAncestor
+Jan 26, 2022			Chandra Sekhar Reddy Muthumula					Added lowestCommonAncestorBST
 --------------------------------------------------------------------------------------------------
 235. Lowest Common Ancestor of a Binary Search Tree
 Medium
@@ -72,6 +73,19 @@ public class LowestCommonAncestorOfBinarySearchTree {
             return leftLca;
         } else {
             return rightLca;
+        }
+    }
+
+    public TreeNode lowestCommonAncestorBST(TreeNode root, TreeNode p, TreeNode q) {
+        if(root==null) return null;
+        if(p.val<root.val&&q.val<root.val) {
+            return lowestCommonAncestor(root.left,p,q);
+        }
+        else if(p.val>root.val&&q.val>root.val){
+            return lowestCommonAncestor(root.right,p,q);
+        }
+        else {
+            return root;
         }
     }
 }
