@@ -8,8 +8,8 @@ Website Link: https://leetcode.com/problems/populating-next-right-pointers-in-ea
 Modification Log: 
 Date				    Name                                            Description
 Jan 28, 2022			Chandra Sekhar Reddy Muthumula					Added Class PopulatingNextRightPointersInEachNode
-Jan 28, 2022			Chandra Sekhar Reddy Muthumula					Added goodNodes
-Jan 28, 2022			Chandra Sekhar Reddy Muthumula					Added goodNodesHelper
+Jan 28, 2022			Chandra Sekhar Reddy Muthumula					Added connectRecursive
+Jan 28, 2022			Chandra Sekhar Reddy Muthumula					Added connectIterative
 --------------------------------------------------------------------------------------------------
 116. Populating Next Right Pointers in Each Node
 Medium
