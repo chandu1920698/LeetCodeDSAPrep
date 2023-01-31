@@ -67,9 +67,9 @@ public class TrimBinarySearchTree {
             // return root.left == null ? root.right : root.left;
             return root.right == null ? root.left : root.right;
         }
-
+        return root;
     }
-
+}
 class TreeNode {
     int val;
     TreeNode left;
