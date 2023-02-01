@@ -10,6 +10,7 @@ Date				    Name                                            Description
 Jan 23, 2022			Chandra Sekhar Reddy Muthumula					Added Class BinaryTreeRightSideView
 Jan 23, 2022			Chandra Sekhar Reddy Muthumula					Added helper
 Jan 23, 2022			Chandra Sekhar Reddy Muthumula					Added rightSideView
+Jan 23, 2022			Chandra Sekhar Reddy Muthumula					Added rightSideViewIterative
 --------------------------------------------------------------------------------------------------
 199. Binary Tree Right Side View
 Medium
@@ -58,6 +59,39 @@ public class BinaryTreeRightSideView {
 
         helper(root.right, currDepth + 1);
         helper(root.left, currDepth + 1);
+    }
+
+    public List<Integer> rightSideViewIterative(TreeNode root) {
+        /* 
+         * TC : O(N)
+         * SC : O(N)
+        */
+        list = new ArrayList<>();
+        if(root == null) {
+            return list;
+        }
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        queue.offerLast(root);
+
+        while(!queue.isEmpty()) {
+            int size = queue.size();
+            boolean isRightMostNodeTaken = false;
+            while(size-- > 0) {
+                TreeNode node = queue.pollFirst();
+                if(!isRightMostNodeTaken) {
+                    list.add(node.val);
+                    isRightMostNodeTaken = !isRightMostNodeTaken;
+                }
+                if(node.right != null) {
+                    queue.offerLast(node.right);
+                }
+                if(node.left != null) {
+                    queue.offerLast(node.left);
+                }
+                
+            }
+        }
+        return list;
     }
 }
 
