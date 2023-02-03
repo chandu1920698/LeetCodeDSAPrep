@@ -8,6 +8,7 @@ Modification Log:
 Date					Name                                            Description
 Dec 18, 2022			Chandra Sekhar Reddy Muthumula					Added Class FindTheDifference 
 Dec 18, 2022			Chandra Sekhar Reddy Muthumula					Added findTheDifference
+Feb 3, 2022			    Chandra Sekhar Reddy Muthumula					Added findTheDifferenceXORApproach
 --------------------------------------------------------------------------------------------------
 389. Find the Difference
 Easy
@@ -65,5 +66,22 @@ public class FindTheDifference {
             }
         }
         return 'a';
+    }
+
+    public char findTheDifferenceXORApproach(String s, String t) {
+        /* 
+         * TC : O(N)
+         * SC : O(1)
+        */
+       int sLen = s.length();
+
+       if(sLen == 0) {
+           return t.charAt(0);
+       }
+       char extraChar = t.charAt(sLen);
+       for(int i = 0; i < sLen; i++) {
+           extraChar ^= (s.charAt(i) ^ t.charAt(i));
+       }
+       return extraChar;
     }
 }
