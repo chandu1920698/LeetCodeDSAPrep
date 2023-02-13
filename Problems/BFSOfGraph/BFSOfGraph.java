@@ -55,8 +55,8 @@ import java.util.*;
 public class BFSOfGraph {
 
     /* 
-     * TC : O(N)
-     * SC : O(N + M)
+     * TC : O(N) + O(2 * E)
+     * SC : O(N)
     */
     public ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
         ArrayList<Integer> bfsList = new ArrayList<Integer>();
