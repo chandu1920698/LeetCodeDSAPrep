@@ -12,6 +12,7 @@ Jan 11, 2022			Chandra Sekhar Reddy Muthumula					Added numIslands
 Jan 11, 2022			Chandra Sekhar Reddy Muthumula					Added helper2 
 Jan 11, 2022			Chandra Sekhar Reddy Muthumula					Added helper1
 Jan 11, 2022			Chandra Sekhar Reddy Muthumula					Added helper3
+Feb 18, 2022			Chandra Sekhar Reddy Muthumula					Added numIslandsGraphs
 --------------------------------------------------------------------------------------------------
 200. Number of Islands
 Medium
@@ -53,7 +54,7 @@ grid[i][j] is '0' or '1'.
 -------------------------------------------------------------------------------------------
 */
 package Problems.NumberOfIslands;
-
+import java.util.*;
 public class NumberOfIslands {
     public int numIslands(char[][] grid) {
         int noOfIslands = 0;
@@ -114,6 +115,52 @@ public class NumberOfIslands {
             }            
         } else {
             return;
+        }
+    }
+
+    public static final int[][] DIRECTIONS = {{-1, 0}, {0, 1}, {0, -1}, {1, 0} };
+    public int numIslandsGraphs(char[][] grid) {
+        int n = grid.length;
+        int m = grid[0].length;
+        int[][] visited = new int[n][m];
+        int count = 0;
+        for(int  i = 0; i < n; i++) {
+            for(int j = 0; j < m; j++) {
+                if(visited[i][j] == 0 && grid[i][j] == '1') {
+                    count++;
+                    dfs(i, j, grid, visited);
+                }
+            }
+        }
+        return count;
+    }
+    private void dfs(int row, int col, char[][] grid, int[][] visited) {
+        visited[row][col] = 1;
+        LinkedList<Pair> queue = new LinkedList<>();
+        queue.offerFirst(new Pair(row, col));
+        while(!queue.isEmpty()) {
+            Pair node = queue.pollLast();
+            int r = node.first;
+            int c = node.second;
+            // System.out.println(r + " : " + c);
+            for(int[] direction : DIRECTIONS) {
+                int nRow = r + direction[0];
+                int nCol = c + direction[1];
+                if(nRow < grid.length && nRow >= 0 && nCol >= 0 && nCol < grid[0].length && grid[nRow][nCol] == '1' && visited[nRow][nCol] == 0) {
+                    visited[nRow][nCol] = 1;
+                    queue.offerFirst(new Pair(nRow, nCol));
+                }
+            }
+        }
+        return;
+    }
+
+    class Pair {
+        int first;
+        int second;
+        public Pair(int first, int second) {
+            this.first = first;
+            this.second = second;
         }
     }
 }
