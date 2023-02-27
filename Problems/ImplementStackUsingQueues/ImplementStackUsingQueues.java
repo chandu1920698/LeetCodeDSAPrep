@@ -1,13 +1,13 @@
 /*
-Class Name  : FindKClosestElements
-Description : This class consists of the solution for FindKClosestElements.
-Created Date: Feb 26, 2022
+Class Name  : ImplementStackUsingQueues
+Description : This class consists of the solution for ImplementStackUsingQueues.
+Created Date: Feb 27, 2022
 Author      : Chandra Sekhar Reddy Muthumula
-Website Link: https://leetcode.com/problems/find-k-closest-elements/description/
+Website Link: https://leetcode.com/problems/implement-stack-using-queues/description/
 Modification Log: 
 Date					    Name                                            Description
-Feb 26, 2022			    Chandra Sekhar Reddy Muthumula					Added Class FindKClosestElements 
-Feb 26, 2022			    Chandra Sekhar Reddy Muthumula					Added numOfSubarrays
+Feb 27, 2022			    Chandra Sekhar Reddy Muthumula					Added Class ImplementStackUsingQueues 
+Feb 27, 2022			    Chandra Sekhar Reddy Muthumula					Added Class MyStack
 --------------------------------------------------------------------------------------------------
 225. Implement Stack using Queues
 Easy
