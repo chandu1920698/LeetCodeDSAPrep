@@ -7,7 +7,8 @@ Website Link: https://leetcode.com/problems/132-pattern/description/
 Modification Log: 
 Date					    Name                                            Description
 Feb 27, 2022			    Chandra Sekhar Reddy Muthumula					Added Class Pattern132 
-Feb 27, 2022			    Chandra Sekhar Reddy Muthumula					Added Class find132pattern
+Feb 27, 2022			    Chandra Sekhar Reddy Muthumula					Added find132pattern
+Feb 27, 2022			    Chandra Sekhar Reddy Muthumula					Added find132patternWithoutStack
 --------------------------------------------------------------------------------------------------
 456. 132 Pattern
 Medium
@@ -64,6 +65,27 @@ public class Pattern132 {
                 thirdElement = stack.pop();
             }
             stack.push(nums[i]);
+        }
+        return false;
+    }
+
+
+    public boolean find132patternWithoutStack(int[] nums) {
+        /* 
+         * TC : O(N ^ 2)
+         * SC : O(1)
+        */
+        int len = nums.length;
+        // if (len < 3) return false;
+        int min = nums[0];
+        for(int j = 0; j < len - 1; j++) {
+            for(int k = j + 1; k < len; k++) {
+                if(nums[k] > min && nums[j] > nums[k]) {
+                    return true;
+                }  else {
+                    min = Math.min(min, nums[j]);
+                }
+            }
         }
         return false;
     }
