@@ -48,6 +48,9 @@ package Problems.SplitArrayLargestSum;
 
 public class SplitArrayLargestSum {
     public int splitArray(int[] nums, int k) {
+        /* 
+         * TC : O(N) + O(LogN * N)
+        */
         int len = nums.length;
         int low;
         int high = 0;
