@@ -8,6 +8,7 @@ Modification Log:
 Date					    Name                                            Description
 Mar  9, 2022			    Chandra Sekhar Reddy Muthumula					Added Class BrickWall
 Mar  9, 2022			    Chandra Sekhar Reddy Muthumula					Added leastBricks 
+Mar  9, 2022			    Chandra Sekhar Reddy Muthumula					Added leastBricks2
 --------------------------------------------------------------------------------------------------
 554. Brick Wall
 Medium
@@ -66,6 +67,21 @@ public class BrickWall {
 
         for (Integer key : map.keySet()) {
             maxfreq = Math.max(maxfreq, map.get(key));
+        }
+        return wall.size() - maxfreq;
+    }
+
+    public int leastBricks2(List<List<Integer>> wall) {
+        int maxfreq = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        for(List<Integer> row : wall) {
+            int brickSum = 0;
+            for(int i = 0; i < row.size() - 1; i++) {
+                brickSum += row.get(i);
+                int tempMax = map.getOrDefault(brickSum, 0) + 1;
+                map.put(brickSum, tempMax);
+                maxfreq = Math.max(maxfreq, tempMax);
+            }
         }
         return wall.size() - maxfreq;
     }
