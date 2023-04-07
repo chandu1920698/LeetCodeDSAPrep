@@ -10,6 +10,8 @@ Date					Name                                            Description
 Sep 26, 2022			Chandra Sekhar Reddy Muthumula					Added Class SortColors 
 Sep 26, 2022			Chandra Sekhar Reddy Muthumula					Added sortColors 
 Sep 26, 2022			Chandra Sekhar Reddy Muthumula					Added swap
+Apr 07, 2022			Chandra Sekhar Reddy Muthumula					Added sortColorsBubbleSort
+Apr 07, 2022			Chandra Sekhar Reddy Muthumula					Added swapXOR
 --------------------------------------------------------------------------------------------------
 75. Sort Colors
 
@@ -81,5 +83,39 @@ class SortColors {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
+    }
+
+    public void sortColorsBubbleSort(int[] nums) {
+        /* 
+         * TC : O(N ^ 2)
+         * SC : O(1)
+        */
+        int len = nums.length;
+        if(len == 1) {
+            return;
+        }
+
+        for(int i = 0; i < len; i++) {
+            boolean swapped = false;
+            for(int j = 1; j < len - i; j++) {
+                if(nums[j] < nums[j - 1]) {
+                    swapXOR(nums, j, j - 1);
+                    swapped = true;
+                }
+            }
+            if(swapped == false) {
+                break;
+            }
+        }
+        return;
+    }
+
+
+    private void swapXOR(int[] nums, int i, int j) {
+        if(i != j) {
+            nums[i] ^= nums[j];
+            nums[j] ^= nums[i];
+            nums[i] ^= nums[j];
+        }
     }
 }
