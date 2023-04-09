@@ -10,8 +10,8 @@ Date					Name                                            Description
 Sep 26, 2022			Chandra Sekhar Reddy Muthumula					Added Class SortColors 
 Sep 26, 2022			Chandra Sekhar Reddy Muthumula					Added sortColors 
 Sep 26, 2022			Chandra Sekhar Reddy Muthumula					Added swap
-Apr 07, 2022			Chandra Sekhar Reddy Muthumula					Added sortColorsBubbleSort
-Apr 07, 2022			Chandra Sekhar Reddy Muthumula					Added swapXOR
+Apr 07, 2023			Chandra Sekhar Reddy Muthumula					Added sortColorsBubbleSort
+Apr 07, 2023			Chandra Sekhar Reddy Muthumula					Added swapXOR
 --------------------------------------------------------------------------------------------------
 75. Sort Colors
 
