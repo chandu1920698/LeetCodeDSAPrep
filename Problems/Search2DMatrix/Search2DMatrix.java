@@ -8,6 +8,9 @@ Modification Log:
 Date				Name                                            Description
 Oct 3, 2022			Chandra Sekhar Reddy Muthumula					Added Class Search2DMatrix 
 Oct 3, 2022			Chandra Sekhar Reddy Muthumula					Added searchMatrix 
+Jun 2, 2023			Chandra Sekhar Reddy Muthumula					Added searchMatrixEfficient 
+Jun 2, 2023			Chandra Sekhar Reddy Muthumula					Added getRowIndex 
+Jun 2, 2023			Chandra Sekhar Reddy Muthumula					Added binarySearch 
 --------------------------------------------------------------------------------------------------
 74. Search a 2D Matrix
 Write an efficient algorithm that searches for a value target in an m x n integer matrix matrix. 
@@ -33,6 +36,56 @@ n == matrix[i].length
 package Problems.Search2DMatrix;
 
 public class Search2DMatrix {
+
+    public boolean searchMatrixEfficient(int[][] matrix, int target) {
+        /* 
+         * TC : O(M + Log N)
+         * SC : O(1)
+        */
+        int searchRowIndex = getRowIndex(matrix, target);
+        if(searchRowIndex == -2) {
+            return true;
+        } else if(searchRowIndex == -1) {
+            return false;
+        }
+
+        return binarySearch(matrix[searchRowIndex], target);
+
+    }
+
+    public int getRowIndex(int[][] matrix, int target) {
+        /* 
+         * TC : O(N)
+         * SC : O(1)
+        */
+        for(int row = 0; row < matrix.length; row++) {
+            if(matrix[row][matrix[row].length - 1] == target) {
+                return -2;
+            } else if(matrix[row][matrix[row].length - 1] > target) {
+                return row;
+            }
+        }
+        return -1;
+    }
+
+    public boolean binarySearch(int[] arr, int target) {
+        /* 
+         * TC : O(Log N)
+         * SC : O(1)
+        */
+        int start = 0, end = arr.length - 1;
+        while(start <= end) {
+            int mid = start + ((end - start) >> 1);
+            if(arr[mid] == target) {
+                return true;
+            } else if(arr[mid] < target) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return false;
+    }
     public boolean searchMatrix(int[][] matrix, int target) {
         int rows = matrix.length;
         int cols = matrix[0].length;
