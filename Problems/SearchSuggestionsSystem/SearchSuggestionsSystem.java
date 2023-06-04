@@ -10,6 +10,8 @@ Modification Log:
 Date					Name                                            Description
 Oct 24, 2022			Chandra Sekhar Reddy Muthumula					Added Class SearchSuggestionsSystem 
 Oct 24, 2022			Chandra Sekhar Reddy Muthumula					Added searchRange 
+Jun 04, 2023			Chandra Sekhar Reddy Muthumula					Added suggestedProductsBinarySearch 
+Jun 04, 2023			Chandra Sekhar Reddy Muthumula					Added binarySearch 
 --------------------------------------------------------------------------------------------------
 1268. Search Suggestions System
 
@@ -135,5 +137,55 @@ public class SearchSuggestionsSystem {
             list.add(matchingProducts);
         }
         return list;
+    }
+
+    public List<List<String>> suggestedProductsBinarySearch(String[] products, String searchWord) {
+        Arrays.sort(products);
+        List<List<String>> result = new ArrayList<>();
+        // System.out.println(Arrays.toString(products));
+        for(int i = 0; i < searchWord.length(); i++) {
+            String subSearchWord = searchWord.substring(0, i + 1);
+            result.add(binarySearch(subSearchWord, products));
+        }
+        return result;
+    }
+
+    private List<String> binarySearch(String word, String[] products) {
+        int start = 0, end = products.length - 1;
+        int ans = 0;
+        while(start <= end) {
+            int mid = start + ((end - start) >> 1);
+            String s1 = word;
+            String s2 = "";
+            if(products[mid].length() < word.length()) {
+                s2 = products[mid];
+            } else {
+                s2 = products[mid].substring(0, word.length());
+            }
+            int compareResults = s1.compareTo(s2);
+            if(compareResults == 0) {
+                ans = mid;
+                break;
+                // start = mid + 1;
+            } else if(compareResults < 0) {
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
+        }
+        
+        while(ans >= 0 && products[ans].length() >= word.length() && word.equals(products[ans].substring(0, word.length()))) {
+            ans--;
+        }
+        ans++;
+        // System.out.println("ans : " + ans + " Word : " + word);
+        List<String> searchList = new ArrayList<>();
+        for(int i = 0; i < 3 && i + ans < products.length; i++) {
+            if(i + ans < products.length && products[i + ans].length() >= word.length() && word.equals(products[i + ans].substring(0, word.length()))) {
+                searchList.add(products[i + ans]);
+            }
+        }
+        // System.out.println("ans : " + ans + " Word : " + word + " searchList : " + Arrays.toString(searchList.toArray()));
+        return searchList;
     }
 }
