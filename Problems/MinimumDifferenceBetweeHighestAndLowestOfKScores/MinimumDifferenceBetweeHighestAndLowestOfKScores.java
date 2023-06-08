@@ -8,6 +8,7 @@ Modification Log:
 Date					    Name                                            Description
 Feb 25, 2022			    Chandra Sekhar Reddy Muthumula					Added Class MinimumDifferenceBetweeHighestAndLowestOfKScores 
 Feb 25, 2022			    Chandra Sekhar Reddy Muthumula					Added minimumDifference
+Jun 08, 2023			    Chandra Sekhar Reddy Muthumula					Added minimumDifferenceForLoop
 --------------------------------------------------------------------------------------------------
 1984. Minimum Difference Between Highest and Lowest of K Scores
 Easy
@@ -68,5 +69,21 @@ public class MinimumDifferenceBetweeHighestAndLowestOfKScores {
             end++;
         }
         return result;
+    }
+
+    public int minimumDifferenceForLoop(int[] nums, int k) {
+        /* 
+         * TC : O(NlogN)
+         * SC : O(1)
+        */
+        Arrays.sort(nums);
+        int minDiff = Integer.MAX_VALUE;
+        for(int i = 0; i < nums.length - k + 1; i++) {
+            minDiff = Math.min(minDiff, nums[i + k - 1] - nums[i]);
+        }
+        if(minDiff == 2147483647) {
+            return 0;
+        }
+        return minDiff;
     }
 }
