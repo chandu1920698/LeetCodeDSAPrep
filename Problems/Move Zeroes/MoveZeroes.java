@@ -9,6 +9,8 @@ Modification Log:
 Date					Name                                            Description
 Sep 14, 2022			Chandra Sekhar Reddy Muthumula					Added Class MoveZeroes 
 Sep 14, 2022			Chandra Sekhar Reddy Muthumula					Added moveZeroes 
+Jun 11, 2023			Chandra Sekhar Reddy Muthumula					Added moveZeroesWhileLoop 
+Jun 11, 2023			Chandra Sekhar Reddy Muthumula					Added swap 
 --------------------------------------------------------------------------------------------------
 283. Move Zeroes
 
@@ -53,5 +55,36 @@ class MoveZeroes {
             }
         }
         return nums;
+    }
+
+    public void moveZeroesWhileLoop(int[] nums) {
+        /* 
+         * TC : O(N)
+         * SC : O(1)
+        */
+        int len = nums.length;
+        if(len == 1) {
+            return;
+        }
+        int p1 = 0, p2 = 1;
+        while(p2 < len) {
+            if(nums[p1] == 0 && nums[p2] != 0) {
+                swap(p1, p2, nums);
+            }
+
+            while(p1 < len && nums[p1] != 0) p1++;
+            p2 = p1;
+            while(p2 < len && nums[p2] == 0) p2++;
+        }
+    }
+
+    private void swap(int i, int j, int[] nums) {
+        nums[i] ^= nums[j];
+        nums[j] ^= nums[i];
+        nums[i] ^= nums[j];
+
+        // int temp = nums[i];
+        // nums[i] = nums[j];
+        // nums[j] = temp;
     }
 }
