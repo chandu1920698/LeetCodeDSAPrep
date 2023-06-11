@@ -9,6 +9,8 @@ Date					    Name                                            Description
 Mar 14, 2022			    Chandra Sekhar Reddy Muthumula					Added Class RemoveDuplicatesFromSortedArray2
 Mar 14, 2022			    Chandra Sekhar Reddy Muthumula					Added removeDuplicates
 Mar 14, 2022			    Chandra Sekhar Reddy Muthumula					Added removeDuplicatesBestApproach 
+Jun 11, 2023			    Chandra Sekhar Reddy Muthumula					Added removeDuplicatesWhileLoop 
+Jun 11, 2023			    Chandra Sekhar Reddy Muthumula					Added swap 
 --------------------------------------------------------------------------------------------------
 80. Remove Duplicates from Sorted Array II
 Medium
@@ -105,5 +107,36 @@ public class RemoveDuplicatesFromSortedArray2 {
             }
         }
         return index;
+    }
+    public int removeDuplicatesWhileLoop(int[] nums) {
+        /* 
+         * TC : O(N)
+         * SC : O(N)
+        */
+        Set<Integer> set = new HashSet<Integer>();
+        int len = nums.length;
+        for(int  i = 0; i < len; i++) {
+            if(!set.add(nums[i])) {
+                nums[i] = -101;
+            }
+        }
+
+        int p1 = 0, p2 = 1;
+        while(p2 < len) {
+            if(nums[p1] == -101 && nums[p2] != -101) {
+                swap(nums, p1, p2);
+            }
+
+            while(p1 < len && nums[p1] != -101) p1++;
+            p2 = p1 + 1;
+            while(p2 < len && nums[p2] == -101) p2++;
+        }
+        return set.size();
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        nums[i] ^= nums[j];
+        nums[j] ^= nums[i];
+        nums[i] ^= nums[j];
     }
 }
