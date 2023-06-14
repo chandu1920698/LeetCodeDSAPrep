@@ -9,6 +9,8 @@ Modification Log:
 Date					Name                                            Description
 Sep 26, 2022			Chandra Sekhar Reddy Muthumula					Added Class RotateArray 
 Sep 26, 2022			Chandra Sekhar Reddy Muthumula					Added rotate 
+Jun 15, 2023			Chandra Sekhar Reddy Muthumula					Added rotateSwap
+Jun 15, 2023			Chandra Sekhar Reddy Muthumula					Added swap 
 --------------------------------------------------------------------------------------------------
 189. Rotate Array
 
@@ -108,5 +110,37 @@ class RotateArray {
             }
             // System.out.println("Reversed last Len - k : " + Arrays.toString(nums));
         } 
+    }
+    public void rotateSwap(int[] nums, int k) {
+        /* 
+         * TC : O(N)
+         * SC : O(1)
+        */
+        int len = nums.length;
+        k %= len;
+        if(k == 0) {
+            return;
+        } 
+        swap(nums, 0, len - 1, len);
+        swap(nums, 0, k - 1, k);
+        swap(nums, k, len - 1, len - k);
+    }
+
+    private void swap(int[] nums, int start, int end, int k) {
+        /* 
+         * TC : O(End - Start) = O(N)
+         * SC : O(1)
+        */
+        while(start < end && k > 0) {
+            nums[start] ^= nums[end];
+            nums[end] ^= nums[start];
+            nums[start] ^= nums[end];
+            // int temp = nums[start];
+            // nums[start] = nums[end];
+            // nums[end] = temp;
+            // System.out.println("Swap : " + Arrays.toString(nums));
+            start++; end--;
+            k--;
+        }
     }
 }  
