@@ -51,6 +51,10 @@ package Problems.MaximumNumberofVowelsinSubstringofGivenLength;
 
 public class MaximumNumberofVowelsinSubstringofGivenLength {
     public int maxVowels(String s, int k) {
+        /*
+         * TC : O(N)
+         * SC : O(1) 
+        */
         int len = s.length();
         if (k > len) {
             k = len;
