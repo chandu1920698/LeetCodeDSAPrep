@@ -11,6 +11,7 @@ Nov 17, 2022			Chandra Sekhar Reddy Muthumula					Added Class BaseballGame
 Nov 17, 2022			Chandra Sekhar Reddy Muthumula					Added Constructor RandomizedSet
 Nov 17, 2022			Chandra Sekhar Reddy Muthumula					Added isNumeric
 Dec 20, 2022			Chandra Sekhar Reddy Muthumula					Added calPointsBestApproach
+Jul 18, 2023			Chandra Sekhar Reddy Muthumula					Added calPointsSingleIteration
 --------------------------------------------------------------------------------------------------
 682. Baseball Game
 Easy
@@ -143,5 +144,40 @@ public class BaseballGame {
             return false;
         }
         return true;
+    }
+
+    public int calPointsSingleIteration(String[] operations) {
+        /* 
+         * TC : O(N)
+         * SC : O(N)
+        */
+        int len = operations.length;
+        if(len == 0) {
+            return 0;
+        }
+        Stack<Integer> stack = new Stack<Integer>();
+        int totalSum = 0;
+        for(int i = 0; i < len; i++) {
+            String currentOperation = operations[i];
+            if(currentOperation.equals("C")) {
+                if(stack.isEmpty() == false) {
+                    totalSum -= stack.pop();
+                }
+            } else if(currentOperation.equals("D")) {
+                int stackPeek = stack.peek();
+                stack.push(stackPeek * 2); 
+                totalSum += stack.peek();
+            } else if(currentOperation.equals("+")) {
+                int firstPrev = stack.pop();
+                int secondPrev = stack.peek();
+                stack.push(firstPrev);
+                stack.push(firstPrev + secondPrev);
+                totalSum += stack.peek();
+            } else {
+                stack.push(Integer.valueOf(currentOperation));
+                totalSum += stack.peek();
+            }
+        }
+        return totalSum;
     }
 }
