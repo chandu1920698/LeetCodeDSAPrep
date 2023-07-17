@@ -9,6 +9,7 @@ Modification Log:
 Date					Name                                            Description
 Oct 13, 2022			Chandra Sekhar Reddy Muthumula					Added Class ValidParentheses 
 Oct 13, 2022			Chandra Sekhar Reddy Muthumula					Added isValid
+Jul 17, 2023			Chandra Sekhar Reddy Muthumula					Added isValidSecond
 --------------------------------------------------------------------------------------------------
 20. Valid Parentheses
 
@@ -62,6 +63,33 @@ public class ValidParentheses {
             } 
         }
         
+        return stack.isEmpty();
+    }
+    public boolean isValidSecond(String s) {
+        /* 
+         * TC : O(N)
+         * SC : O(N)
+        */
+        int len = s.length();
+        Stack<Character> stack = new Stack<Character>();
+        for(int i = 0; i < len; i++) {
+            char currentBracket = s.charAt(i);
+            if(currentBracket == '(' || currentBracket == '[' || currentBracket == '{') {
+                stack.push(currentBracket);
+            } else if(stack.isEmpty() == false) {
+                if(stack.peek() == '(' && ')' == currentBracket) {
+                    stack.pop();
+                } else if(stack.peek() == '[' && ']' == currentBracket) {
+                    stack.pop();
+                } else if(stack.peek() == '{' && '}' == currentBracket) {
+                    stack.pop();
+                } else {
+                stack.push(currentBracket);
+            }
+            } else {
+                stack.push(currentBracket);
+            }
+        }
         return stack.isEmpty();
     }
 }
