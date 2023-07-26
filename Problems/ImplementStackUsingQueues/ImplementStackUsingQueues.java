@@ -8,6 +8,7 @@ Modification Log:
 Date					    Name                                            Description
 Feb 27, 2022			    Chandra Sekhar Reddy Muthumula					Added Class ImplementStackUsingQueues 
 Feb 27, 2022			    Chandra Sekhar Reddy Muthumula					Added Class MyStack
+Jul 25, 2023			    Chandra Sekhar Reddy Muthumula					Added Class MyStackBasicFunctions
 --------------------------------------------------------------------------------------------------
 225. Implement Stack using Queues
 Easy
@@ -78,6 +79,41 @@ public class ImplementStackUsingQueues {
         
         public boolean empty() {    
             return this.stack.isEmpty();
+        }
+    }
+
+
+    class MyStackBasicFunctions {
+
+        Queue<Integer> queue1;
+        
+        public MyStackBasicFunctions() {
+            queue1 = new LinkedList<>();
+        }
+        
+        public void push(int x) {
+            queue1.add(x);
+            for(int i = 0; i < queue1.size() - 1; i++) {
+                queue1.add(queue1.remove());
+            }
+        }
+        
+        public int pop() {
+            if(!queue1.isEmpty()) {
+                return queue1.remove();
+            }
+            return -1;
+        }
+        
+        public int top() {
+            if(!queue1.isEmpty()) {
+                return queue1.peek();
+            }
+            return -1;
+        }
+        
+        public boolean empty() {
+            return queue1.isEmpty();
         }
     }
 }
