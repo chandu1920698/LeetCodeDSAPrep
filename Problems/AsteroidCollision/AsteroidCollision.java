@@ -9,6 +9,8 @@ Modification Log:
 Date				    Name                                            Description
 Nov 27, 2022			Chandra Sekhar Reddy Muthumula					Added Class AsteroidCollision
 Nov 27, 2022			Chandra Sekhar Reddy Muthumula					Added asteroidCollision
+Jul 30, 2023			Chandra Sekhar Reddy Muthumula					Added asteroidCollision2
+Jul 30, 2023			Chandra Sekhar Reddy Muthumula					Added getDirection
 --------------------------------------------------------------------------------------------------
 735. Asteroid Collision
 Medium
@@ -86,5 +88,52 @@ public class AsteroidCollision {
             outPutArray[--index] = stack.pop();
         }
         return outPutArray;
+    }
+    public int[] asteroidCollision2(int[] asteroids) {
+        /* 
+         * TC : O(N)
+         * SC : O(N)
+        */
+        Stack<Integer> stack = new Stack<>();
+        for(int asteroid : asteroids) {
+            if(stack.isEmpty() == true) {
+                stack.push(asteroid);
+                continue;
+            }
+            while(stack.isEmpty() == false) {
+                String peekDirection = getDirection(stack.peek());
+                String asteroidDirection = getDirection(asteroid);
+                if(peekDirection.equals(asteroidDirection) || (peekDirection.equals("left") && asteroidDirection.equals("right"))) {
+                    stack.push(asteroid);
+                    break;
+                } else if(peekDirection.equals("right") && asteroidDirection.equals("left")){
+                    if((int) Math.abs(stack.peek()) > (int) Math.abs(asteroid)) {
+                        break;
+                    } else if((int) Math.abs(stack.peek()) == (int) Math.abs(asteroid)) {
+                        stack.pop();
+                        break;
+                    } else {
+                        stack.pop();
+                        if(stack.isEmpty()) {
+                            stack.push(asteroid);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        int[] result = new int[stack.size()];
+        for(int i = result.length - 1; i >= 0; i--) {
+            result[i] = stack.pop();
+        }
+        return result;
+    }
+
+    private String getDirection(int asteroid) {
+        if(asteroid < 0) {
+            return "left";
+        }
+        return "right";
     }
 }
