@@ -8,6 +8,7 @@ Modification Log:
 Date					    Name                                            Description
 Feb 27, 2022			    Chandra Sekhar Reddy Muthumula					Added Class SimplifyPath 
 Feb 27, 2022			    Chandra Sekhar Reddy Muthumula					Added SimplifyPath
+Jul 31, 2023			    Chandra Sekhar Reddy Muthumula					Added simplifyPathUsingStacks
 --------------------------------------------------------------------------------------------------
 71. Simplify Path
 Medium
@@ -81,5 +82,40 @@ public class SimplifyPath {
             finalPath.deleteCharAt(finalPath.length() - 1);
         }
         return new String(finalPath);
+    }
+
+    public String simplifyPathUsingStacks(String path) {
+        /* 
+         * TC : O(N) + O(N)
+         * SC : O(N)
+        */
+        Stack<String> stack = new Stack<>();
+        for(String s : path.split("/")) {
+          System.out.println("Current Path : " + s);
+          if(s.equals(".") || s.equals("")) {
+            continue;
+          } else if(s.equals("..")) {
+            if(stack.isEmpty() == false) {
+              stack.pop();
+            }
+          }else {
+            stack.push(s);
+          }
+        }
+
+        String finalPath = "";
+
+        while(stack.isEmpty() == false) {
+          finalPath = stack.pop() + "/"+ finalPath;
+        }
+        finalPath = "/" + finalPath;
+        if(finalPath.equals("") || finalPath.equals("/")) {
+          return "/";
+        }
+        if(finalPath.substring(finalPath.length() - 1, finalPath.length()).equals("/")) {
+            finalPath = finalPath.substring(0, finalPath.length() - 1);
+        }
+
+        return finalPath;
     }
 }
