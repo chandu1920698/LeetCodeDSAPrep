@@ -1,14 +1,17 @@
 /*
 Class Name  : OnlineStockSpan
 Description : This class consists of the solution for OnlineStockSpan.
-Created Date: Feb 28, 2022
+Created Date: Feb 28, 2023
 Author      : Chandra Sekhar Reddy Muthumula
 Website Link: https://leetcode.com/problems/online-stock-span/description/
 Modification Log: 
 Date					    Name                                            Description
-Feb 28, 2022			    Chandra Sekhar Reddy Muthumula					Added Class OnlineStockSpan
-Feb 28, 2022			    Chandra Sekhar Reddy Muthumula					Added Class StockSpanner 
-Feb 28, 2022			    Chandra Sekhar Reddy Muthumula					Added next 
+Feb 28, 2023			    Chandra Sekhar Reddy Muthumula					Added Class OnlineStockSpan
+Feb 28, 2023			    Chandra Sekhar Reddy Muthumula					Added StockSpanner 
+Feb 28, 2023			    Chandra Sekhar Reddy Muthumula					Added next 
+Aug 02, 2023			    Chandra Sekhar Reddy Muthumula					Added Class OnlineStockSpan2
+Aug 02, 2023			    Chandra Sekhar Reddy Muthumula					Added StockSpanner2
+Aug 02, 2023			    Chandra Sekhar Reddy Muthumula					Added next2 
 --------------------------------------------------------------------------------------------------
 901. Online Stock Span
 Medium
@@ -72,6 +75,30 @@ public class OnlineStockSpan {
                 span += stack.pop()[1];
             }
             stack.push(new int[] {price, span});
+            return span;
+        }
+    }
+
+    class StockSpanner2 {
+        List<Integer> array;
+        public StockSpanner2() {
+            array = new ArrayList<>();
+        }
+        
+        public int next2(int price) {
+            /* 
+             * TC : O(N * N)
+             * SC : O(N)
+            */
+            int span = 1;
+            for(int i = array.size() - 1; i >=0; i--) {
+                if(array.get(i) > price) {
+                    break;
+                } else {
+                    span++;
+                }
+            }
+            array.add(price);
             return span;
         }
     }
