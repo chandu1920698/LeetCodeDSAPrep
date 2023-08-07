@@ -10,6 +10,7 @@ Date				    Name                                            Description
 Nov 26, 2022			Chandra Sekhar Reddy Muthumula					Added Class DailyTemperatures
 Nov 26, 2022			Chandra Sekhar Reddy Muthumula					Added dailyTemperatures
 Nov 26, 2022			Chandra Sekhar Reddy Muthumula					Added dailyTemperaturesBruteForce
+Aug 07, 2023			Chandra Sekhar Reddy Muthumula					Added dailyTemperatures2
 --------------------------------------------------------------------------------------------------
 739. Daily Temperatures
 Medium
@@ -46,11 +47,33 @@ package Problems.DailyTemperatures;
 import java.util.*;
 
 public class DailyTemperatures {
+
+    public int[] dailyTemperatures2(int[] temperatures) {
+        int len = temperatures.length;
+        int[] result = new int[len];
+        Stack<Integer> stack = new Stack<>();
+        for (int i = len - 1; i >= 0; i--) {
+
+            while (!stack.isEmpty() && temperatures[stack.peek()] <= temperatures[i]) {
+                stack.pop();
+
+            }
+            if (stack.isEmpty() == true) {
+                result[i] = 0;
+                stack.push(i);
+            } else {
+
+                result[i] = stack.peek() - i;
+                stack.push(i);
+            }
+
+        }
+        return result;
+    }
+
     public int[] dailyTemperatures(int[] temperatures) {
         /*
-         * This is using stack data structure
-         * TC : O(N)
-         * SC : O(N)
+         * This is using stack data structure TC : O(N) SC : O(N)
          */
         int len = temperatures.length;
         if (len == 1)
@@ -69,8 +92,7 @@ public class DailyTemperatures {
 
     public int[] dailyTemperaturesBruteForce(int[] temperatures) {
         /*
-         * TC : O(N)
-         * SC : O(1)
+         * TC : O(N ^ 2) SC : O(1)
          */
         int len = temperatures.length;
         int[] result = new int[len];
