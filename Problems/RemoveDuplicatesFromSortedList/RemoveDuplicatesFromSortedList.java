@@ -6,9 +6,10 @@ Author      : Chandra Sekhar Reddy Muthumula
 Link        : https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/
 
 Modification Log: 
-Date				    Name                                            Description
+Date				Name                                            Description
 Dec 6, 2022			Chandra Sekhar Reddy Muthumula					Added Class RemoveDuplicatesFromSortedList
 Dec 6, 2022			Chandra Sekhar Reddy Muthumula					Added deleteDuplicates
+AUG 17,2023			Chandra Sekhar Reddy Muthumula					Added deleteDuplicates2
 --------------------------------------------------------------------------------------------------
 83. Remove Duplicates from Sorted List
 Easy
@@ -71,4 +72,29 @@ public class RemoveDuplicatesFromSortedList {
         }
         return head;
     }
+
+
+    public ListNode deleteDuplicates2(ListNode head) {
+        /* 
+         * TC : O(N)
+         * SC : O(1)
+        */
+        if(head == null || head.next == null) {
+            return head;
+        }
+
+        ListNode node = head;
+        ListNode currNode = head;
+
+        while(currNode.next != null) {
+            if(currNode.next.val != currNode.val) {
+                node.next = currNode.next;
+                node = currNode.next;
+            }
+            currNode = currNode.next;
+        }
+        node.next = currNode.next;
+
+        return head;
+    }553
 }
