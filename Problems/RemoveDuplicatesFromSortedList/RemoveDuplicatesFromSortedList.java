@@ -96,5 +96,5 @@ public class RemoveDuplicatesFromSortedList {
         node.next = currNode.next;
 
         return head;
-    }553
+    }
 }
