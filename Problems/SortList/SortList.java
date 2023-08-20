@@ -10,6 +10,8 @@ Date                Name                                            Description
 Dec 12, 2022		Chandra Sekhar Reddy Muthumula					Added Class SortList
 Dec 12, 2022		Chandra Sekhar Reddy Muthumula					Added sortList
 Dec 12, 2022		Chandra Sekhar Reddy Muthumula					Added getMiddle
+Aug 20, 2023		Chandra Sekhar Reddy Muthumula					Added sortListBruteForce
+Aug 20, 2023		Chandra Sekhar Reddy Muthumula					Added getLength
 --------------------------------------------------------------------------------------------------
 287. Find the Duplicate Number
 Medium
@@ -109,6 +111,50 @@ public class SortList {
         }
         prev.next = null;
         return slow;
+    }
+
+    public ListNode sortListBruteForce(ListNode head) {
+        /* 
+         * TC : O(N Logn)
+         * SC : O(N)
+        */
+        if(head == null || head.next == null) {
+            return head;
+        }
+        
+
+        int length = getLength(head);
+        int[] arr = new int[length];
+
+        ListNode node = head;
+        int index = 0;
+        while(node != null) {
+            arr[index++] = node.val;
+            node = node.next;
+        }
+
+        Arrays.sort(arr);
+
+        ListNode newHead = new ListNode();
+        ListNode tempNewHead = newHead;
+        for(int a : arr) {
+            ListNode n = new ListNode(a);
+            newHead.next = n;
+            newHead = n;
+
+        }
+        return tempNewHead.next;
+    }
+
+    private int getLength(ListNode head) {
+        int length = 0;
+        ListNode node = head;
+        while(node != null) {
+            length++;
+            node = node.next;
+        }
+
+        return length;
     }
 }
 
