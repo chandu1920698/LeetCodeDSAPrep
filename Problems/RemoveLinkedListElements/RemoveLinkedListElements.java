@@ -6,9 +6,10 @@ Author      : Chandra Sekhar Reddy Muthumula
 Link        : https://leetcode.com/problems/remove-linked-list-elements/description/
 
 Modification Log: 
-Date				    Name                                            Description
+Date                Name                                            Description
 Dec 5, 2022			Chandra Sekhar Reddy Muthumula					Added Class RemoveLinkedListElements
 Dec 5, 2022			Chandra Sekhar Reddy Muthumula					Added removeNthFromEnd
+Aug 21, 2023		Chandra Sekhar Reddy Muthumula					Added removeNthFromEnd2
 --------------------------------------------------------------------------------------------------
 19. Remove Nth Node From End of List
 Medium
@@ -71,5 +72,38 @@ public class RemoveLinkedListElements {
             curr = curr.next;
         }
         return dummyHead.next;
+    }
+
+    public ListNode removeElements2(ListNode head, int val) {
+        /* 
+         * TC : O(N)
+         * SC : O(1)
+        */
+        ListNode node = head;
+        if(node == null) {
+            return null;
+        }
+
+        while(node != null && node.val == val) {
+            node = node.next;
+        }
+
+        if(node == null) {
+            return null;
+        }
+
+        ListNode prev = node;
+        ListNode curr = node.next;
+        ListNode dummyNode = node;
+
+        while(curr != null) {
+            if(curr.val == val) {
+                prev.next = curr.next;
+            } else {
+                prev = prev.next;
+            }
+            curr = curr.next;
+        }
+        return dummyNode;
     }
 }
