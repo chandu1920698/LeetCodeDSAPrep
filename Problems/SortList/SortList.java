@@ -52,6 +52,8 @@ Can you solve the problem in linear runtime complexity?
 */
 package Problems.SortList;
 
+import java.util.*;
+
 public class SortList {
     public ListNode sortList(ListNode head) {
         if(head == null || head.next == null) return head;
